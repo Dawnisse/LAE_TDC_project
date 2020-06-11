@@ -44,7 +44,7 @@ SHELL := bash
 #dut := uart_tx
 
 ## for implementation
-dut := xadc_uart_tx
+dut := DelayLine
 
 
 
