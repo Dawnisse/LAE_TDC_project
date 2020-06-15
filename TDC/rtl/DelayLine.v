@@ -5,46 +5,41 @@
 `timescale 1ns/100ps
 
 
-module DelayLine(
+module DelayLine #(parameter integer Nffmux)(
    
    input  wire HIT,           // hit signal
-   input  wire CLK,           // clock signal
+   input  wire clk,           // clock signal
+   input  wire clr,
    
-   output reg CountOn,         // counter
-   output reg [3:0] Z = 4'd0   // output vector 
+   output reg [Nffmux-1:0] Q  // output vector 
   
    );
-    
    
-   reg EN = 1'b0 ;  // enable initialization
+   wire GND = 1'b0 ;   
+   wire [Nffmux:0] w ;        //Nmux + 1 wires
    
+   assign w[0] = HIT ;
    
-   always @(posedge HIT) begin      // sensitivity list (aggiorna quando cambia un input)
-      
-	  EN      = 1'b1;
-	  CountOn = 1'b0;
+    generate 
+   
+      genvar k ;
+	  
+	  for (k = 0; k < Nffmux; k = k + 1) begin : lenght
+	  
+	     FFMUX   lenght (
 		 
-      if (EN == 1'b1) begin      // AGGIUSTARE STA ROBA BRUTTA
-		
-		 Z[0] <= 1'b1 ;
-		
-		 if (Z[0])
-		 Z[1] <= Z[0] ;
-		 
-		 if (Z[1])
-		 Z[2] <= Z[1] ;
-		 
-		 if (Z[2])
-		 Z[3] <= Z[2] ;
-		
-		 @(posedge CLK) EN = 1'b0 ;
-	
-      end    //if
+		    .A  (   w[k]),
+			.B  (    GND),
+			.clk(    clk),
+			.clr(    clr),
+			.Z  ( w[k+1]),
+			.Q  (   Q[k])
 			
-      else
-	     CountOn = 1'b1;
-    
-	end      //always
+		    );
+	  
+	  end // for
+  
+   endgenerate
       
 
 endmodule
