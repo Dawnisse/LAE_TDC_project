@@ -9,7 +9,7 @@
 module Carry4_DelayLine(
 
    input  wire CI,         //First MUX input
-   input  wire CYINT,      //First MUX input
+   input  wire CYINIT,      //First MUX input
    input  wire [3:0] DI,   //Data-in (MUX '0' input) 
    input  wire [3:0] S,    //Selection bus
 

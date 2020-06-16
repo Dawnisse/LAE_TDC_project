@@ -19,7 +19,7 @@ module tb_Carry4_DelayLine ;
    //   device under test   //
    ///////////////////////////
 
-   reg  CI;
+   reg CI;
    wire CYINIT  = 1'b0;
    wire [3:0]DI = 4'b0000;
    wire [3:0]S  = 4'b1111;
