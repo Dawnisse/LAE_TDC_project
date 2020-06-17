@@ -1,0 +1,12 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/ClockGen.v,1591872438,systemVerilog,,,,ClockGen,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_DelayLine.v,1592292773,systemVerilog,,,,tb_DelayLine,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_Multi_Carry4_DelayLine.v,1592302669,systemVerilog,,,,tb_Carry4_DelayLine,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Carry4_DelayLine.v,1592302669,systemVerilog,,,,Carry4_DelayLine,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/DelayLine.v,1592292773,systemVerilog,,,,DelayLine,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/FFMUX.v,1592292773,systemVerilog,,,,FFMUX,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_DelayLine.v,1592340285,systemVerilog,,,,Multi_Carry4_DelayLine,,,,,,,,
+C:/Xilinxa/Vivado/2019.2/data/verilog/src/glbl.v,1573089660,systemVerilog,,,,glbl,,,,,,,,

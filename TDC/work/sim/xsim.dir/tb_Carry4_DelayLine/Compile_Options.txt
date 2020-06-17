@@ -1,0 +1,1 @@
+-relax -mt "2" -L "work" -L "xpm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -debug "all" "work.tb_Carry4_DelayLine" "work.glbl" -snapshot "tb_Carry4_DelayLine" -nolog 

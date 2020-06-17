@@ -18,31 +18,44 @@ module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 2)(
 
    );
    
-   wire   [3+(Ncarry4-1)*4:0]w; 
-   assign w[0] = CI;
+  // wire   [3+(Ncarry4-1)*4:0]w; 
+  // assign w[0] = CI;
    
    generate 
    
       genvar k ;
 	  
 	  for (k = 0; k < Ncarry4; k = k + 1) begin 
-	  
+	     if (k==0)begin
          //CARRY4: Fast Carry Logic Component
          // 7 Series
          // Xilinx HDL Libraries Guide, version 2012.2
-         CARRY4 CARRY4_inst (
-         
-            .CO( CO[4*k+3:4*k]),          // 4-bit carry out
-            .O( O[4*k+3:4*k]),            // 4-bit carry chain XOR data out
-            .CI(w[k]),                        // 1-bit carry cascade input
-            .CYINIT(CYINIT[k]),  // 1-bit carry initialization
-            .DI(DI[4*k+3:4*k]),          // 4-bit carry-MUX data in
-            .S(S[4*k+3:4*k])             // 4-bit carry-MUX select input
-	        
-         );
+            CARRY4 CARRY4_inst (
+            
+               .CO( CO[4*k+3:4*k]),          // 4-bit carry out
+               .O( O[4*k+3:4*k]),            // 4-bit carry chain XOR data out
+               .CI(CI),                        // 1-bit carry cascade input
+               .CYINIT(CYINIT[k]),  // 1-bit carry initialization
+               .DI(DI[4*k+3:4*k]),          // 4-bit carry-MUX data in
+               .S(S[4*k+3:4*k])             // 4-bit carry-MUX select input
+	           
+            );
+	     end //if
+		 else begin
+		    CARRY4 CARRY4_inst (
+            
+               .CO( CO[4*k+3:4*k]),          // 4-bit carry out
+               .O( O[4*k+3:4*k]),            // 4-bit carry chain XOR data out
+               .CI(CO[3+4*(k-1)]),                        // 1-bit carry cascade input
+               .CYINIT(CYINIT[k]),  // 1-bit carry initialization
+               .DI(DI[4*k+3:4*k]),          // 4-bit carry-MUX data in
+               .S(S[4*k+3:4*k])             // 4-bit carry-MUX select input
+	           
+            );
+	     end //else
          // End of CARRY4_inst instantiation
 
-        assign w[k+1] = CO[4*k+3] ;		 
+        //assign w[k+1] = CO[4*k+3] ;		 
     end  // for
 	
    endgenerate 
