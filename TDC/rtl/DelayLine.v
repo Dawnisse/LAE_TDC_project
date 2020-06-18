@@ -5,38 +5,49 @@
 `timescale 1ns/100ps
 
 
-module DelayLine #(parameter integer Nffmux)(
+module DelayLine #(parameter integer Nmux)(
    
-   input  wire HIT,           // hit signal
-   input  wire clk,           // clock signal
-   input  wire clr,
+   input wire filtered_hit,
    
-   output reg [Nffmux-1:0] Q  // output vector 
-  
+   output wire [Nmux-1:0] Z
+
    );
-   
-   wire GND = 1'b0 ;   
-   wire [Nffmux:0] w ;        //Nmux + 1 wires
-   
-   assign w[0] = HIT ;
+      
    
     generate 
    
       genvar k ;
 	  
-	  for (k = 0; k < Nffmux; k = k + 1) begin : lenght
+	  for (k = 0; k < Nmux; k = k + 1) begin
 	  
-	     FFMUX   lenght (
+	     if (k == 0)begin
+	  
+	     MUX (
 		 
-		    .A  (   w[k]),
-			.B  (    GND),
-			.clk(    clk),
-			.clr(    clr),
-			.Z  ( w[k+1]),
-			.Q  (   Q[k])
+		    .A  (filtered_hit),
+			.B  (        1'b0),
+			.S  (        1'b1),
+			.Z  (        Z[k])
 			
-		    );
+			
+		     );
 	  
+	     end //if
+		 
+		 else begin
+		 
+		 MUX (
+		 
+		    .A  (Z[k-1]),
+			.B  (  1'b0),
+			.S  (  1'b1),
+			.Z  (  Z[k])
+			
+			
+		     );
+		  
+		 end //else
+		 
 	  end // for
   
    endgenerate

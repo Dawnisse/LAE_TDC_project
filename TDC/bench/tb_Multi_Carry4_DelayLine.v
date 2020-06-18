@@ -2,9 +2,10 @@
 //*----- MODULE DELAY LINE WITH CARRY4 XILINX PRIMITIVES -----*//
 /////////////////////////////////////////////////////////////////
 
+`define NUMBER_OF_CARRY4 2
 `timescale 1ns / 100ps
 
-module tb_Carry4_DelayLine ;
+module tb_Multi_Carry4_DelayLine ;
 
 
    /////////////////////////////////
@@ -19,21 +20,19 @@ module tb_Carry4_DelayLine ;
    //   device under test   //
    ///////////////////////////
 
-   reg  CI;
-   wire CYINIT  = 1'b0;
-   wire [3:0]DI = 4'b0000;
-   wire [3:0]S  = 4'b1111;
-   wire [3:0]O;
-   wire [3:0]CO;
+   wire CI = 1'b0;
+   reg  trigger;
 
-   Carry4_DelayLine   DUT (
+   wire [7:0]CO;
+   wire [7:0]O;
+
+   Multi_Carry4_DelayLine  #(.Ncarry4 (`NUMBER_OF_CARRY4)) DUT (
    
       .CO(CO),          // 4-bit carry out
-      .O(O),            // 4-bit carry chain XOR data out
+      .O(O),
       .CI(CI),          // 1-bit carry cascade input
-      .CYINIT(CYINIT),  // 1-bit carry initialization
-      .DI(DI),          // 4-bit carry-MUX data in
-      .S(S)             // 4-bit carry-MUX select input
+      .trigger(trigger) // 1-bit carry initialization
+      
 
     
       ) ;
@@ -44,11 +43,11 @@ module tb_Carry4_DelayLine ;
 
    initial begin
    
-      #0 CI = 1'b0;
+      #0 trigger = 1'b0;
 	  
-	  #110 CI = 1'b1;
+	  #110 trigger = 1'b1;
 	  
-	  #500 CI = 1'b0;
+	  #500 trigger = 1'b0;
 	  
 	  #600 $finish;
 	  

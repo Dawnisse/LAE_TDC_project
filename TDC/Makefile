@@ -44,7 +44,7 @@ SHELL := bash
 #dut := uart_tx
 
 ## for implementation
-dut := Carry4_DelayLine
+dut := Multi_Carry4_DelayLine
 
 
 
