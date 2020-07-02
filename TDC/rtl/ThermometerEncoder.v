@@ -14,37 +14,33 @@
 // [Revisions]      05.05.2020 - Created
 //-----------------------------------------------------------------------------------------------------
 
-
 `timescale 1ns / 100ps
 
 module ThermometerEncoder (
 
-   input  wire enable,
-   input  wire [15:0] thermo,       // 16-bit thermometric input
-   output wire [3:0]  bin           // 4-bit  binary output
+   input  wire [31:0]  thermo,    // 32-bit thermometer output code
+   output reg  [4:0]   bin        //  5-bit base-2 binary input code
 
    ) ;
+
    
-   assign  bin = ( ! enable) ? 0 : 
+   integer i ;
+   integer j = 0;
    
-   (
-     (thermo[0])  ? 0  : 
-     (thermo[1])  ? 1  : 
-     (thermo[2])  ? 2  : 
-     (thermo[3])  ? 3  : 
-     (thermo[4])  ? 4  : 
-     (thermo[5])  ? 5  : 
-     (thermo[6])  ? 6  : 
-     (thermo[7])  ? 7  : 
-     (thermo[8])  ? 8  : 
-     (thermo[9])  ? 9  : 
-     (thermo[10]) ? 10 : 
-     (thermo[11]) ? 11 : 
-     (thermo[12]) ? 12 : 
-     (thermo[13]) ? 13 : 
-     (thermo[14]) ? 14 : 15
-	 
-	); 
- 
- endmodule 
+   always @(*) begin
+
+   
+      for(i=0; i < 32; i=i+1) begin
+
+        if (thermo[i] == 1'b1)
+         j = j + 1;
+
+      end  // for
+	  
+	  bin[4:0] = j ;
+	  
+   end  // always
+
+endmodule
+
 
