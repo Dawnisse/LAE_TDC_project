@@ -2,7 +2,7 @@
 //
 //
 
-`define Num_FFMUX 4
+`define Num_MUX 4
 `timescale 1ns / 100ps
 
 module tb_DelayLine ;
@@ -16,28 +16,24 @@ module tb_DelayLine ;
    ClockGen   ClockGen_inst (.clk(clk100)) ;
 
    // Device Under Test: DUT
-
-   reg  clr;
-   reg  HIT;
-   wire [3:0] Q;
-
-   DelayLine #(.Nffmux(`Num_FFMUX)) DUT (
    
-      .HIT(   HIT), 
-      .clk(clk100), 
-      .clr(   clr),
-      .Q  (     Q)
+   reg  filtered_hit;
+   wire [3:0]Z;
+
+   DelayLine #(.Nmux(`Num_MUX)) DUT (
+   
+      .filtered_hit(filtered_hit), 
+      .Z(Z)
 	  
       ) ;  //CONNECTION
 
    // stimulus
    initial begin
   
-      #0   HIT = 1'b0;
-      #0   clr = 1'b0;         // initial value at t=0
+      #0   filtered_hit = 1'b0;
 		   
-      #510 HIT = 1'b1 ;
-      #450 HIT = 1'b0 ;
+      #125 filtered_hit = 1'b1 ;
+      #254 filtered_hit = 1'b0 ;
       
       #500 $finish ;           // stop the simulation
    end

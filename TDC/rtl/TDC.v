@@ -10,62 +10,63 @@ module TDC(
    input  wire clk,
    input  wire hit,
    
-   output wire [4:0]bin_out,
+   output wire [2:0]bin_out_start,
+   output wire [2:0]bin_out_stop,
    output wire [3:0]out_count
 
 );
 
-   wire filtered_hit;
+   wire filtered_start;
    wire filtered_stop;
-   wire [31:0]thermo_start;
-   wire [31:0]thermo_stop;
+   wire [7:0]thermo_start;
+   wire [7:0]thermo_stop;
    wire start_count;
    wire stop_count;
    
 
 //INPUT FILTER
-
-generate
+generate begin :infil
  
- InputFilter #(.NFF(3))(
+         InputFilter infil (
       
-	  .clk(clk),
-	  .hit(hit),
-	  .filtered_hit(filtered_hit),
-	  .valid(start_count)
+	        .clk(clk),
+	        .hit(hit),
+	        .filtered_hit(filtered_start),
+	        .valid(start_count)
    
-   );
+            );
     
-endgenerate 
-   
-//DELAY LINE
+    end //begin infil
+	
+endgenerate    
 
-generate 
+   
+//START DELAY LINE
 
-   genvar k;
+generate begin :StartDelayLine
    
-   for (k = 0; k <= 1 ; k = k + 1 ) begin
+   DelayLine StartDelayLine (
    
-   if (k==0) begin 
-   DelayLine #(.Nmux(32))(
-   
-      .filtered_hit(filtered_hit),
+      .filtered_hit(filtered_start),
 	  .Z(thermo_start)
      
    );
-   end //if
+   end //begin StartDelayLine
    
-   else begin
+endgenerate 
+ 
+// STOP DELAY LINE  
+generate begin :StopDelayLine
    
-   DelayLine #(.Nmux(32))(
+   DelayLine StopDelayLine (
    
       .filtered_hit(filtered_stop),
 	  .Z(thermo_stop)
      
    );
    
-   end//else
-   end //for
+ 
+   end //begin StopDelayLine
    
 endgenerate
    
@@ -85,22 +86,36 @@ endgenerate
    
 //Thermometer encoder
 
-generate
-
-   ThermometerEncoder (
+generate begin :STARTthermo2bin
    
-      .thermo(thermo),
-	  .bin(bin_out)
+
+   ThermometerEncoder3 STARTthermo2bin(
+   
+      .thermo(thermo_start),
+	  .bin(bin_out_start)
    
    );
 
+end //begin thermo2bin
+endgenerate
+
+generate begin :STOPthermo2bin
+   
+
+   ThermometerEncoder3 STOPthermo2bin(
+   
+      .thermo(thermo_stop),
+	  .bin(bin_out_stop)
+   
+   );
+end //begin STOPthermo2bin
 endgenerate
 
 //STOP FILTER
 
-generate
+generate begin :stopfil
  
- StopFilter #(.NFF(3))(
+ StopFilter stopfil(
       
 	  .clk(clk),
 	  .hit(hit),
@@ -108,7 +123,7 @@ generate
 	  .valid(stop_count)
    
    );
-    
+ end // begin stopfil   
 endgenerate 
 
  

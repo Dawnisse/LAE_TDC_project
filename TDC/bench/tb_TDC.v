@@ -17,7 +17,8 @@ module tb_TDC ;
    //Device Under Test : DUT
    
    reg hit;
-   wire [4:0]bin_out;
+   wire [2:0]bin_out_start;
+   wire [2:0]bin_out_stop;
    wire [3:0]out_count;
    
    
@@ -25,7 +26,8 @@ module tb_TDC ;
    
       .clk(clk100),
 	  .hit(hit),
-	  .bin_out(bin_out),
+	  .bin_out_start(bin_out_start),
+	  .bin_out_stop(bin_out_stop),
 	  .out_count(out_count)
     
    );
@@ -35,10 +37,12 @@ module tb_TDC ;
    initial begin
    
      #0   hit = 1'b0;
-	 #55  hit = 1'b1;
-	 #240 hit = 1'b0;
+	 #122  hit = 1'b1;
+	 #159 hit = 1'b0;
+	 #232 hit = 1'b1;
+	 #243 hit = 1'b0;
 	 
-	 #500 $finish ;  
+	 #300 $finish ;  
    
    end //stimulus
    
