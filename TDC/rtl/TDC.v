@@ -10,16 +10,17 @@ module TDC(
    input  wire clk,
    input  wire hit,
    
-   output wire [2:0]bin_out_start,
-   output wire [2:0]bin_out_stop,
+   output wire [4:0]bin_out_start,
+   output wire [4:0]bin_out_stop,
    output wire [3:0]out_count
 
 );
 
    wire filtered_start;
    wire filtered_stop;
-   wire [7:0]thermo_start;
-   wire [7:0]thermo_stop;
+   wire [31:0]thermo_start;
+   wire [31:0]thermo_stop;
+   wire [31:0]O;
    wire start_count;
    wire stop_count;
    
@@ -43,17 +44,31 @@ endgenerate
    
 //START DELAY LINE
 
-generate begin :StartDelayLine
+generate begin :Start_carry4_DelayLine
+
+   Multi_Carry4_DelayLine Start_carry4_DelayLine(
    
-   DelayLine StartDelayLine (
-   
-      .filtered_hit(filtered_start),
-	  .Z(thermo_start)
-     
+      .CI(1'b0),
+	  .trigger(filtered_start),
+	  .CO(thermo_start),
+	  .O(O)
    );
-   end //begin StartDelayLine
-   
-endgenerate 
+
+end
+
+endgenerate
+
+//generate begin :StartDelayLine
+//   
+//   DelayLine StartDelayLine (
+//   
+//      .filtered_hit(filtered_start),
+//	  .Z(thermo_start)
+//     
+//   );
+//   end //begin StartDelayLine
+//   
+//endgenerate 
  
 // STOP DELAY LINE  
 generate begin :StopDelayLine
@@ -89,9 +104,9 @@ endgenerate
 generate begin :STARTthermo2bin
    
 
-   ThermometerEncoder3 STARTthermo2bin(
+   ThermometerEncoder2 STARTthermo2bin(
    
-      .thermo(thermo_start),
+      .thermob(thermo_start),
 	  .bin(bin_out_start)
    
    );
@@ -102,9 +117,9 @@ endgenerate
 generate begin :STOPthermo2bin
    
 
-   ThermometerEncoder3 STOPthermo2bin(
+   ThermometerEncoder2 STOPthermo2bin(
    
-      .thermo(thermo_stop),
+      .thermob(thermo_stop),
 	  .bin(bin_out_stop)
    
    );

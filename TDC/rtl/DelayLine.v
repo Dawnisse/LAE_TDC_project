@@ -5,7 +5,7 @@
 `timescale 1ns/100ps
 
 
-module DelayLine #(parameter integer Nmux = 8)(
+module DelayLine #(parameter integer Nmux = 32)(
    
    input wire filtered_hit,
    

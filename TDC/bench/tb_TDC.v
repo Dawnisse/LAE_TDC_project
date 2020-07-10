@@ -17,8 +17,8 @@ module tb_TDC ;
    //Device Under Test : DUT
    
    reg hit;
-   wire [2:0]bin_out_start;
-   wire [2:0]bin_out_stop;
+   wire [4:0]bin_out_start;
+   wire [4:0]bin_out_stop;
    wire [3:0]out_count;
    
    

@@ -19,20 +19,28 @@
 module ThermometerEncoder (
 
    input  wire [31:0]  thermo,    // 32-bit thermometer output code
-   output wire  [4:0]   bin        //  5-bit base-2 binary input code
+   output reg  [4:0]   bin        //  5-bit base-2 binary input code
 
    ) ;
 
    
-//   integer i ;
-//
-//   
-//      for(i=0; i < 32; i=i+1) begin
-//
-//		assign bin = (thermo == {(32-i)'b1, (i)'b0}) ? i;
-//	  
-//	  end //for
+   integer i ;
+   integer j=0;
+   
+   always @(thermo) begin
 
+      for(i=0; i < 32; i=i+1) begin
+	  
+	     if(thermo[i] == 1) begin
+		 j = j+1;
+		 end
+	  
+	  end //for
+
+      bin <= j;
+	  
+	  end //always
+	  
 endmodule
 
 

@@ -5,7 +5,7 @@
 `timescale 1ns / 100ps
 
 
-module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 2)(
+module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 8)(
 
    input  wire CI,                       //First MUX input
    //input  wire [Ncarry4-1:0]CYINIT,    //First MUX input
