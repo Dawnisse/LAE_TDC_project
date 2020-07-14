@@ -7,9 +7,9 @@
 
 module DelayLine #(parameter integer Nmux = 32)(
    
-   input wire filtered_hit,
+   input wire delay_line_in,
    
-   output wire [Nmux-1:0] Z
+   output wire [Nmux-1:0] delay_line_out
 
    );
        
@@ -23,10 +23,10 @@ module DelayLine #(parameter integer Nmux = 32)(
 	  
 	     MUX mux(
 		 
-		    .A  (filtered_hit),
-			.B  (        1'b0),
-			.S  (        1'b1),
-			.Z  (        Z[k])
+		    .A  (delay_line_in),
+			.B  (         1'b0),
+			.S  (         1'b1),
+			.Z  (delay_line_out[k])
 			
 			
 		     );
@@ -37,10 +37,10 @@ module DelayLine #(parameter integer Nmux = 32)(
 		 
 		 MUX mux(
 		 
-		    .A  (Z[k-1]),
+		    .A  (delay_line_out[k-1]),
 			.B  (  1'b0),
 			.S  (  1'b1),
-			.Z  (  Z[k])
+			.Z  (  delay_line_out[k])
 			
 			
 		     );
