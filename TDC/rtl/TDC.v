@@ -18,14 +18,18 @@ module TDC(
 
    wire filtered_start;
    wire filtered_stop;
-   wire [31:0]thermo_start;
-   wire [31:0]thermo_stop;
+   wire [31:0]thermo_start_raw;
+   wire [31:0]thermo_start_piped;
+   wire [31:0]thermo_stop_raw;
+   wire [31:0]thermo_stop_piped;
    wire [31:0]O;
    wire start_count;
    wire stop_count;
+   wire finish;
    
 
 //INPUT FILTER
+
 generate begin :infil
  
          InputFilter infil (
@@ -50,7 +54,7 @@ generate begin :Start_carry4_DelayLine
    
       .CI(1'b0),
 	  .trigger(filtered_start),
-	  .CO(thermo_start),
+	  .CO(thermo_start_raw),
 	  .O(O)
    );
 
@@ -62,68 +66,42 @@ endgenerate
 //   
 //   DelayLine StartDelayLine (
 //   
-//      .filtered_hit(filtered_start),
-//	  .Z(thermo_start)
+//    .delay_line_in(filtered_start),
+//	  .delay_line_out(thermo_start_raw)
 //     
 //   );
 //   end //begin StartDelayLine
 //   
 //endgenerate 
- 
-// STOP DELAY LINE  
-generate begin :StopDelayLine
-   
-   DelayLine StopDelayLine (
-   
-      .filtered_hit(filtered_stop),
-	  .Z(thermo_stop)
-     
-   );
-   
- 
-   end //begin StopDelayLine
-   
-endgenerate
-   
-//COUNTER
 
-//generate
-//
-//   Counter (
-//   
-//      .start_count(start_count),
-//	  .stop_count(stop_count),
-//	  .clk(clk),
-//	  .out_count(out_count)
-//   
-//   );
-//  endgenerate
+//START PIPELINE
+
+generate begin :Start_pipeline
+
+   Pipeline Start_pipeline(
    
-//Thermometer encoder
+      .clk(clk),
+	  .pipe_in(thermo_start_raw)
+	  .pipe_out(thermo_start_piped)
+   
+   )
+end
+
+endgenerate
+
+// START THERMOMETER ENCODER
 
 generate begin :STARTthermo2bin
    
-
    ThermometerEncoder2 STARTthermo2bin(
    
-      .thermob(thermo_start),
+      .thermob(thermo_start_piped),
 	  .bin(bin_out_start)
    
    );
 
 end //begin thermo2bin
-endgenerate
 
-generate begin :STOPthermo2bin
-   
-
-   ThermometerEncoder2 STOPthermo2bin(
-   
-      .thermob(thermo_stop),
-	  .bin(bin_out_stop)
-   
-   );
-end //begin STOPthermo2bin
 endgenerate
 
 //STOP FILTER
@@ -135,12 +113,77 @@ generate begin :stopfil
 	  .clk(clk),
 	  .hit(hit),
 	  .filtered_hit(filtered_stop),
-	  .valid(stop_count)
+	  .valid(stop_count),
+	  .finish(finish)
    
    );
  end // begin stopfil   
-endgenerate 
 
+endgenerate 
  
+// STOP DELAY LINE 
+ 
+generate begin :StopDelayLine
+   
+   DelayLine StopDelayLine (
+   
+      .delay_line_in(filtered_stop),
+	  .delay_line_out(thermo_stop_raw)
+     
+   );
+   
+   end //begin StopDelayLine
+   
+endgenerate
+
+// STOP PIPELINE
+
+generate begin :Stop_pipeline
+
+   Pipeline Stop_pipeline(
+   
+      .clk(clk),
+	  .pipe_in(thermo_stop_raw)
+	  .pipe_out(thermo_stop_piped)
+   
+   )
+   
+end
+
+endgenerate
+   
+//STOP THERMOMETER ENCODER
+
+generate begin :STOPthermo2bin
+   
+
+   ThermometerEncoder2 STOPthermo2bin(
+   
+      .thermob(thermo_stop_piped),
+	  .bin(bin_out_stop)
+   
+   );
+end //begin STOPthermo2bin
+
+endgenerate
+
+//COUNTER
+
+generate begin: Contatore
+
+   Counter Contatore (
+   
+      .start_count(start_count),
+	  .stop_count(stop_count),
+	  .clk(clk),
+	  .reset(finish),
+	  .count(out_count)
+   
+   );
+
+end //begin
+
+endgenerate
+
 
 endmodule
