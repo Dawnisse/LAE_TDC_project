@@ -12,7 +12,6 @@ Git repository for the TDC project by Chiara Alice, Giacomo Alloatti.
 [**[Contents]**](#contents)
 
 ![TDC_SCHEME](../master/Images/TDC_scheme.png)
-TODO:caricare immagine da Inkskape
 
 # Blocks
 [**[Contents]**](#contents)
