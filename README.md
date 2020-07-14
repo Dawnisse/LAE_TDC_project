@@ -18,7 +18,7 @@ Git repository for the TDC project by Chiara Alice, Giacomo Alloatti.
 
 ## Input filter (START FILTER)
 
-TODO:caricare immagine da inkscape
+![Input_filter](../master/Images/Input_filter.png)
 
 Uso delle primitive FDCE per istanziare i FF necessari.
 
