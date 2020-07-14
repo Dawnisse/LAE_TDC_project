@@ -24,7 +24,7 @@ Uso delle primitive FDCE per istanziare i FF necessari.
 
 ## STOP filter
 
-TODO:caricare immagine da inkscape
+![Stop_filter](../master/Images/stop_filter.png)
 
 Uso delle primitive FDCE per istanziare i FF necessari.
 
