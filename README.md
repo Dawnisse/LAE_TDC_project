@@ -11,14 +11,14 @@ Git repository for the TDC project by Chiara Alice, Giacomo Alloatti.
 # TDC scheme
 [**[Contents]**](#contents)
 
-TODO:caricare immagine da Inkskape
+![TDC_SCHEME](../master/Images/TDC_scheme.png)
 
 # Blocks
 [**[Contents]**](#contents)
 
 ## Input filter (START FILTER)
 
-TODO:caricare immagine da inkscape
+![Input_filter](../master/Images/Input_filter.PNG)
 
 Uso delle primitive FDCE per istanziare i FF necessari.
 
