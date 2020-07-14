@@ -16,16 +16,16 @@ module TDC(
 
 );
 
-   wire filtered_start;
-   wire filtered_stop;
-   wire [31:0]thermo_start_raw;
-   wire [31:0]thermo_start_piped;
-   wire [31:0]thermo_stop_raw;
-   wire [31:0]thermo_stop_piped;
-   wire [31:0]O;
-   wire start_count;
-   wire stop_count;
-   wire finish;
+   (*keep = "true"*)wire filtered_start;
+   (*keep = "true"*)wire filtered_stop;
+   (*keep = "true"*)wire [31:0]thermo_start_raw;
+   (*keep = "true"*)wire [31:0]thermo_start_piped;
+   (*keep = "true"*)wire [31:0]thermo_stop_raw;
+   (*keep = "true"*)wire [31:0]thermo_stop_piped;
+   (*keep = "true"*)wire [31:0]O;
+   (*keep = "true"*)wire start_count;
+   (*keep = "true"*)wire stop_count;
+   (*keep = "true"*)wire finish;
    
 
 //INPUT FILTER
@@ -81,10 +81,10 @@ generate begin :Start_pipeline
    Pipeline Start_pipeline(
    
       .clk(clk),
-	  .pipe_in(thermo_start_raw)
+	  .pipe_in(thermo_start_raw),
 	  .pipe_out(thermo_start_piped)
    
-   )
+   );
 end
 
 endgenerate
@@ -143,10 +143,10 @@ generate begin :Stop_pipeline
    Pipeline Stop_pipeline(
    
       .clk(clk),
-	  .pipe_in(thermo_stop_raw)
+	  .pipe_in(thermo_stop_raw),
 	  .pipe_out(thermo_stop_piped)
    
-   )
+   );
    
 end
 
@@ -169,9 +169,9 @@ endgenerate
 
 //COUNTER
 
-generate begin: Contatore
+generate begin :counter
 
-   Counter Contatore (
+   Counter counter(
    
       .start_count(start_count),
 	  .stop_count(stop_count),
@@ -181,7 +181,7 @@ generate begin: Contatore
    
    );
 
-end //begin
+end //begin counter
 
 endgenerate
 

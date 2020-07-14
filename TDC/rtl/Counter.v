@@ -4,7 +4,7 @@
 
 `timescale 1ns / 100ps
 
-module Pipeline #(parameter integer NFF = 5)(
+module Counter #(parameter integer NFF = 4)(
 
    input  wire clk, //CLOCK
    input  wire start_count, 
@@ -17,11 +17,19 @@ module Pipeline #(parameter integer NFF = 5)(
 // logica FSM
    wire start_long;
    wire stop_long;
-   wire invcount;
+  // wire invcount;
    wire en;
-   assign invcount= ~count[0];   
+  // assign invcount= ~count[0];   
    
-    //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
+ generate
+
+    genvar j;
+
+    for(j = 0; j <= 1; j = j+1) begin
+
+       if(j==0) begin
+
+     	   //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
               // UltraScale
               // Xilinx HDL Libraries Guide, version 2014.1
               FDCE #(
@@ -38,6 +46,9 @@ module Pipeline #(parameter integer NFF = 5)(
                  .CLR(reset),      // 1-bit input: Asynchronous clear
                  .D(1'b1)   // 1-bit input: Data
               );
+		 end //if
+		 
+		 else begin
               // End of 3FDCE_inst instantiation
     //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
               // UltraScale
@@ -56,13 +67,17 @@ module Pipeline #(parameter integer NFF = 5)(
                  .CLR(reset),      // 1-bit input: Asynchronous clear
                  .D(1'b1)   // 1-bit input: Data
               );
+			  
+			end //else
               // End of 3FDCE_inst instantiation
-   
+        end //for
+		
+	endgenerate
     // LUT2: 2-input Look-Up Table with general output (Mapped to a LUT6)
               // 7 Series
               // Xilinx HDL Libraries Guide, version 2012.2
               LUT2 #(
-              .INIT(4'b0100) // Specify LUT Contents
+              .INIT(4'b0010) // Specify LUT Contents
               ) LUT2_inst (
               .O(en), // LUT general output
               .I0(start_long), // LUT input
@@ -93,11 +108,11 @@ module Pipeline #(parameter integer NFF = 5)(
                  .IS_D_INVERTED  (1'b0)    // Optional inversion for D
               )
               FDCE_inst (
-                 .Q(count[k]), // 1-bit output: Data
+                 .Q(count[k]),    // 1-bit output: Data
                  .C(clk),         // 1-bit input: Clock
-                 .CE(en),       // 1-bit input: Clock enable
-                 .CLR(reset),      // 1-bit input: Asynchronous clear
-                 .D(invcount)   // 1-bit input: Data
+                 .CE(en),         // 1-bit input: Clock enable
+                 .CLR(reset),     // 1-bit input: Asynchronous clear
+                 .D(~count[k])    // 1-bit input: Data
               );
               // End of 3FDCE_inst instantiation
 	       end // if
@@ -115,10 +130,10 @@ module Pipeline #(parameter integer NFF = 5)(
               )
               FDCE_inst (
                  .Q(count[k]), // 1-bit output: Data
-                 .C(clk),         // 1-bit input: Clock
+                 .C(count[k-1]),         // 1-bit input: Clock
                  .CE(en),       // 1-bit input: Clock enable
                  .CLR(reset),      // 1-bit input: Asynchronous clear
-                 .D(count[k-1])   // 1-bit input: Data
+                 .D(~count[k])   // 1-bit input: Data
               );
               // End of 3FDCE_inst instantiation
 	       end // if
