@@ -4,14 +4,15 @@
 
 module ThermometerEncoder2 (
 
+   input  wire clk,
    input  wire [31:0]  thermob,    // 32-bit thermometer output code
    output reg  [4:0]   bin        //  5-bit base-2 binary input code
 
    ) ;
    
    integer k;
-   reg [31:0] thermo;
-   reg [31:0] thermob;
+   (*dont_touch = "true" *)reg [31:0] thermo;
+   (*dont_touch = "true" *)reg [31:0] thermob;
    
    
   always @(thermob) begin
@@ -26,7 +27,7 @@ module ThermometerEncoder2 (
    
    end //always
   
-   always @(thermo) begin
+   always @(posedge clk) begin
    
       casez(thermo)
 	  

@@ -18,6 +18,7 @@
 
 module ThermometerEncoder (
 
+   input  wire clk,
    input  wire [31:0]  thermo,    // 32-bit thermometer output code
    output reg  [4:0]   bin        //  5-bit base-2 binary input code
 
@@ -27,7 +28,7 @@ module ThermometerEncoder (
    integer i ;
    integer j=0;
    
-   always @(thermo) begin
+   always @(posedge clk) begin
 
       for(i=0; i < 32; i=i+1) begin
 	  

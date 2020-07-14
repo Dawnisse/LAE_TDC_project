@@ -2,7 +2,7 @@
 //*----- MODULE DELAY LINE WITH CARRY4 XILINX PRIMITIVES -----*//
 /////////////////////////////////////////////////////////////////
 
-`define NUMBER_OF_CARRY4 2
+`define NUMBER_OF_CARRY4 8
 `timescale 1ns / 100ps
 
 module tb_Multi_Carry4_DelayLine ;
@@ -23,8 +23,8 @@ module tb_Multi_Carry4_DelayLine ;
    wire CI = 1'b0;
    reg  trigger;
 
-   wire [7:0]CO;
-   wire [7:0]O;
+   wire [31:0]CO;
+   wire [31:0]O;
 
    Multi_Carry4_DelayLine  #(.Ncarry4 (`NUMBER_OF_CARRY4)) DUT (
    

@@ -11,7 +11,7 @@ module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 8)(
    //input  wire [Ncarry4-1:0]CYINIT,    //First MUX input
    input  wire trigger,                  //First CYINIT
 				
-   output wire [3+(Ncarry4-1)*4:0]CO, 
+   (*dont_touch = "true" *) output wire [3+(Ncarry4-1)*4:0]CO, 
    output wire [3+(Ncarry4-1)*4:0]O   //
 
    );
