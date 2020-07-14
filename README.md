@@ -16,37 +16,37 @@ TODO:caricare immagine da Inkskape
 # Blocks
 [**[Contents]**](#contents)
 
-##Input filter (START FILTER)
+## Input filter (START FILTER)
 
 TODO:caricare immagine da inkscape
 
 Uso delle primitive FDCE per istanziare i FF necessari.
 
-##STOP filter
+## STOP filter
 
 TODO:caricare immagine da inkscape
 
 Uso delle primitive FDCE per istanziare i FF necessari.
 
-##Delay Lines
+## Delay Lines
 
 TODO:caricare immagine
 
 Uso delle primitive CARRY4 per istanziare gli elementi di ritardo. Una delay line per lo start ed una per lo stop.
 
-##Thermometric to binary encoders
+## Thermometric to binary encoders
 
 Encoder termometrici per la codifica in binario
 
-##Pipelines
+## Pipelines
 
 Stadi intermedi costituiti da un banco di registri che tengono memoria del codice termometrico.
 
-##Counters
+## Counters
 
 Contatori binari.
 
-#References
+# References
 [**[Contents]**](#contents)
 
 TODO:Aggiungere referenze.
