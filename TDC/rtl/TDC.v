@@ -122,19 +122,33 @@ generate begin :stopfil
 endgenerate 
  
 // STOP DELAY LINE 
- 
-generate begin :StopDelayLine
+
+generate begin :Start_carry4_DelayLine
+
+   Multi_Carry4_DelayLine Start_carry4_DelayLine(
    
-   DelayLine StopDelayLine (
-   
-      .delay_line_in(filtered_stop),
-	  .delay_line_out(thermo_stop_raw)
-     
+      .CI(1'b0),
+	  .trigger(filtered_stop),
+	  .CO(thermo_stop_raw),
+	  .O(O)
    );
-   
-   end //begin StopDelayLine
-   
+
+end
+
 endgenerate
+ 
+//generate begin :StopDelayLine
+//   
+//   DelayLine StopDelayLine (
+//   
+//      .delay_line_in(filtered_stop),
+//	  .delay_line_out(thermo_stop_raw)
+//     
+//   );
+//   
+//   end //begin StopDelayLine
+//   
+//endgenerate
 
 // STOP PIPELINE
 
