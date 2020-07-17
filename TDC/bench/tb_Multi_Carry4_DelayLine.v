@@ -8,14 +8,6 @@
 module tb_Multi_Carry4_DelayLine ;
 
 
-   /////////////////////////////////
-   //   100 MHz clock generator   //
-   /////////////////////////////////
-
-   wire clk100 ;
-
-   ClockGen  ClockGen_inst ( .clk(clk100) ) ;
-
    ///////////////////////////
    //   device under test   //
    ///////////////////////////

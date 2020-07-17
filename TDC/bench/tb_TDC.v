@@ -19,7 +19,7 @@ module tb_TDC ;
    reg hit;
    wire [4:0]bin_out_start;
    wire [4:0]bin_out_stop;
-   wire [3:0]out_count;
+   wire [47:0]out_count;
    
    
    TDC DUT(
@@ -37,7 +37,7 @@ module tb_TDC ;
    initial begin
    
      #0   hit = 1'b0;
-	 #122  hit = 1'b1;
+	 #122 hit = 1'b1;
 	 #159 hit = 1'b0;
 	 #232 hit = 1'b1;
 	 #243 hit = 1'b0;
