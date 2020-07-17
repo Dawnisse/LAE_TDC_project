@@ -20,6 +20,7 @@ module Counter(
    wire stop_long;
   // wire invcount;
    wire en;
+   wire TC;
   // assign invcount= ~count[0];   
    
   
@@ -90,56 +91,56 @@ module Counter(
    
    
 // pipeline effettiva      
-  generate 
-  
-       genvar k ;
- 	  
- 	    for (k = 0; k < NFF; k = k + 1) begin
-		
-		   if(k==0) begin
-             //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
-             // UltraScale
-             // Xilinx HDL Libraries Guide, version 2014.1
-             FDCE #(
-                .INIT(0), // Initial value of register, 1’b0, 1’b1
-                // Programmable Inversion Attributes: Specifies the use of the built-in programmable inversion
-                .IS_CLR_INVERTED(1'b0),   // Optional inversion for CLR
-                .IS_C_INVERTED  (1'b0),   // Optional inversion for C
-                .IS_D_INVERTED  (1'b0)    // Optional inversion for D
-             )
-             FDCE_inst (
-                .Q(count[k]),    // 1-bit output: Data
-                .C(clk),         // 1-bit input: Clock
-                .CE(en),         // 1-bit input: Clock enable
-                .CLR(reset),     // 1-bit input: Asynchronous clear
-                .D(~count[k])    // 1-bit input: Data
-             );
-             // End of 3FDCE_inst instantiation
-	       end // if
-		
-		   else begin
-             //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
-             // UltraScale
-             // Xilinx HDL Libraries Guide, version 2014.1
-             FDCE #(
-                .INIT(0), // Initial value of register, 1’b0, 1’b1
-                // Programmable Inversion Attributes: Specifies the use of the built-in programmable inversion
-                .IS_CLR_INVERTED(1'b0),   // Optional inversion for CLR
-                .IS_C_INVERTED  (1'b0),   // Optional inversion for C
-                .IS_D_INVERTED  (1'b0)    // Optional inversion for D
-             )
-             FDCE_inst (
-                .Q(count[k]), // 1-bit output: Data
-                .C(count[k-1]),         // 1-bit input: Clock
-                .CE(en),       // 1-bit input: Clock enable
-                .CLR(reset),      // 1-bit input: Asynchronous clear
-                .D(~count[k])   // 1-bit input: Data
-             );
-             // End of 3FDCE_inst instantiation
-	       end // if
-	    end //for
-	  
-  endgenerate
+//  generate 
+//  
+//       genvar k ;
+// 	  
+// 	    for (k = 0; k < NFF; k = k + 1) begin
+//		
+//		   if(k==0) begin
+//             //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
+//             // UltraScale
+//             // Xilinx HDL Libraries Guide, version 2014.1
+//             FDCE #(
+//                .INIT(0), // Initial value of register, 1’b0, 1’b1
+//                // Programmable Inversion Attributes: Specifies the use of the built-in programmable inversion
+//                .IS_CLR_INVERTED(1'b0),   // Optional inversion for CLR
+//                .IS_C_INVERTED  (1'b0),   // Optional inversion for C
+//                .IS_D_INVERTED  (1'b0)    // Optional inversion for D
+//             )
+//             FDCE_inst (
+//                .Q(count[k]),    // 1-bit output: Data
+//                .C(clk),         // 1-bit input: Clock
+//                .CE(en),         // 1-bit input: Clock enable
+//                .CLR(reset),     // 1-bit input: Asynchronous clear
+//                .D(~count[k])    // 1-bit input: Data
+//             );
+//             // End of 3FDCE_inst instantiation
+//	       end // if
+//		
+//		   else begin
+//             //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
+//             // UltraScale
+//             // Xilinx HDL Libraries Guide, version 2014.1
+//             FDCE #(
+//                .INIT(0), // Initial value of register, 1’b0, 1’b1
+//                // Programmable Inversion Attributes: Specifies the use of the built-in programmable inversion
+//                .IS_CLR_INVERTED(1'b0),   // Optional inversion for CLR
+//                .IS_C_INVERTED  (1'b0),   // Optional inversion for C
+//                .IS_D_INVERTED  (1'b0)    // Optional inversion for D
+//             )
+//             FDCE_inst (
+//                .Q(count[k]), // 1-bit output: Data
+//                .C(count[k-1]),         // 1-bit input: Clock
+//                .CE(en),       // 1-bit input: Clock enable
+//                .CLR(reset),      // 1-bit input: Asynchronous clear
+//                .D(~count[k])   // 1-bit input: Data
+//             );
+//             // End of 3FDCE_inst instantiation
+//	       end // if
+//	    end //for
+//	  
+//  endgenerate
 
 
 //COUNTER_LOAD_MACRO: Loadable variable counter implemented in a DSP48E
@@ -160,5 +161,24 @@ module Counter(
 //      .RST(reset) // 1-bit active high synchronous reset
 //   );
 // End of COUNTER_LOAD_MACRO_inst instantiation
-    
+ 
+// COUNTER_TC_MACRO: Counter with terminal count implemented in a DSP48E
+// 7 Series
+// Xilinx HDL Libraries Guide, version 2012.2
+COUNTER_TC_MACRO #(
+   .COUNT_BY(48'h000000000001), // Count by value
+   .DEVICE("7SERIES"), // Target Device: "7SERIES"
+   .DIRECTION("UP"), // Counter direction, "UP" or "DOWN"
+   .RESET_UPON_TC("FALSE"), // Reset counter upon terminal count, "TRUE" or "FALSE"
+   .TC_VALUE(48'h000000000000), // Terminal count value
+   .WIDTH_DATA(48) // Counter output bus width, 1-48
+   ) 
+COUNTER_TC_MACRO_inst (
+   .Q(count), // Counter output bus, width determined by WIDTH_DATA parameter
+   .TC(TC), // 1-bit terminal count output, high = terminal count is reached
+   .CLK(clk), // 1-bit positive edge clock input
+   .CE(en), // 1-bit active high clock enable input
+   .RST(reset) // 1-bit active high synchronous reset
+   );
+// End of COUNTER_TC_MACRO_inst instantiation 
 endmodule
