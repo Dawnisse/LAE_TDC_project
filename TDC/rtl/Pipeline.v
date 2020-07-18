@@ -1,10 +1,28 @@
-/////////////////////////////////////////////////////////////////
-//*----- MODULE PIPELINE WITH FDCE XILINX PRIMITIVES -----*//
-/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+//-------------IMPLEMENTATION OF TDC ON ARTY7 A7:ARTIX7 FPGA-----------------------//
+/////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------------------------//
+//-- Authors:        Chiara Alice and Giacomo Alloatti
+//-- Institute:      Università degli studi di Torino
+//-- Course:         Laurea Magistrale in fisica delle tecnologie avanzate
+//--                 LABORATORIO AVANZATO DI ELETTRONICA
+//-- Create Date:    07/2020 
+//-- Module Name:    tdc - Structural 
+//-- Project Name:   tdc - Time to Digital Converter
+//-- Target Devices: ARTY7 - XC5VLX30
+//--
+//-- Description:    PIPELINE WITH FDCE XILINX'S ISTANCES
+//--
+//--
+//-- Inputs:
+//--
+//-- Outputs:
+//--
+//---------------------------------------------------------------------------------//
 
 `timescale 1ns / 100ps
 
-module Pipeline #(parameter integer NFF = 32)(
+module Pipeline #(parameter integer NFF = 200)(
 
    input  wire clk, //CLOCK
    input  wire [NFF-1:0]pipe_in, 

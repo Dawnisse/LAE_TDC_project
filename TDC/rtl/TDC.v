@@ -1,6 +1,24 @@
-///////////////////////////////////////////////////
-//* ---- Behavioural implementation of TDC ----* //
-///////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+//-------------IMPLEMENTATION OF TDC ON ARTY7 A7:ARTIX7 FPGA-----------------------//
+/////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------------------------//
+//-- Authors:        Chiara Alice and Giacomo Alloatti
+//-- Institute:      Università degli studi di Torino
+//-- Course:         Laurea Magistrale in fisica delle tecnologie avanzate
+//--                 LABORATORIO AVANZATO DI ELETTRONICA
+//-- Create Date:    07/2020 
+//-- Module Name:    tdc - Structural 
+//-- Project Name:   tdc - Time to Digital Converter
+//-- Target Devices: ARTY7 - XC5VLX30
+//--
+//-- Description:    TOP LEVEL MODULE
+//--
+//--
+//-- Inputs:
+//--
+//-- Outputs:
+//--
+//---------------------------------------------------------------------------------//
 
 
 `timescale 1ns / 100ps
@@ -10,19 +28,19 @@ module TDC(
    input  wire clk,
    input  wire hit,
    
-   output wire [4:0]bin_out_start,
-   output wire [4:0]bin_out_stop,
+   output wire  [4:0]bin_out_start,
+   output wire  [4:0]bin_out_stop,
    output wire [47:0]out_count
 
 );
 
    (*keep = "true"*)wire filtered_start;
    (*keep = "true"*)wire filtered_stop;
-   (*keep = "true"*)wire [31:0]thermo_start_raw;
-   (*keep = "true"*)wire [31:0]thermo_start_piped;
-   (*keep = "true"*)wire [31:0]thermo_stop_raw;
-   (*keep = "true"*)wire [31:0]thermo_stop_piped;
-   (*keep = "true"*)wire [31:0]O;
+   (*keep = "true"*)wire [199:0]thermo_start_raw;
+   (*keep = "true"*)wire [199:0]thermo_start_piped;
+   (*keep = "true"*)wire [199:0]thermo_stop_raw;
+   (*keep = "true"*)wire [199:0]thermo_stop_piped;
+   (*keep = "true"*)wire [199:0]O;
    (*keep = "true"*)wire start_count;
    (*keep = "true"*)wire stop_count;
    (*keep = "true"*)wire finish;
@@ -62,7 +80,7 @@ end
 
 endgenerate
 
-//generate begin :StartDelayLine
+//generate begin :StartDelayLine  //DelayLine implemented with MUXs
 //   
 //   DelayLine StartDelayLine (
 //   
@@ -137,7 +155,7 @@ end
 
 endgenerate
  
-//generate begin :StopDelayLine
+//generate begin :StopDelayLine //DelayLine implemented with MUXs
 //   
 //   DelayLine StopDelayLine (
 //   

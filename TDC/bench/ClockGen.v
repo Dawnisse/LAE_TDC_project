@@ -10,7 +10,7 @@
 
 `timescale 1ns / 100ps
 
-module ClockGen #(parameter real PERIOD = 10.0) (
+module ClockGen #(parameter real PERIOD = 5.0) (
 
    output reg clk
 

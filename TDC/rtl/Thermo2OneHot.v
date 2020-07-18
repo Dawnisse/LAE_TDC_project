@@ -48,23 +48,6 @@ generate
 
    end //for
 endgenerate
-  
-//   integer i ;
-//   integer j=0;
-//   
-//   always @(*) begin
-//
-//      for(i=0; i < 32; i=i+1) begin
-//	  
-//	     if(thermo[i] == 1) begin
-//		 j = j+1;
-//		 end
-//	  
-//	  end //for
-//
-//      bin <= j;
-//	  
-//	  end //always
 	  
 endmodule
 
