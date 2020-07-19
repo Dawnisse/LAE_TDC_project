@@ -4,7 +4,7 @@
 
 `timescale 1ns / 100ps
 
-module StopFilter #(parameter integer NFF = 4)(
+module StopFilter (
 
    (*keep = "true"*) input  wire clk, //CLOCK
    (*keep = "true"*) input  wire hit, 
@@ -15,15 +15,12 @@ module StopFilter #(parameter integer NFF = 4)(
 
    );
  
-   (*keep = "true"*) wire not_hit = ~hit;
-   (*keep = "true"*) wire w;              //to connect 1 e 2 ff
-   (*keep = "true"*) wire y;
       
    generate 
    
         genvar k ;
   	  
-  	    for (k = 0; k < NFF; k = k + 1) begin
+  	    for (k = 0; k < 3; k = k + 1) begin
 		
 		   if (k == 0) begin
               //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
@@ -37,10 +34,10 @@ module StopFilter #(parameter integer NFF = 4)(
                  .IS_D_INVERTED  (1'b0)    // Optional inversion for D
               )
               FDCE_inst (
-                 .Q(w), // 1-bit output: Data
-                 .C(not_hit), // 1-bit input: Clock
+                 .Q(filtered_hit), // 1-bit output: Data
+                 .C(~hit), // 1-bit input: Clock
                  .CE(1'b1), // 1-bit input: Clock enable
-                 .CLR(w), // 1-bit input: Asynchronous clear
+                 .CLR(clk), // 1-bit input: Asynchronous clear
                  .D(1'b1) // 1-bit input: Data
               );
 			  
@@ -61,38 +58,17 @@ module StopFilter #(parameter integer NFF = 4)(
            .IS_D_INVERTED  (1'b0)    // Optional inversion for D
         )
         FDCE_inst (
-           .Q(y), // 1-bit output: Data
+           .Q(valid), // 1-bit output: Data
            .C(clk), // 1-bit input: Clock
            .CE(1'b1), // 1-bit input: Clock enable
-           .CLR(w), // 1-bit input: Asynchronous clear
-           .D(1'b1) // 1-bit input: Data
+           .CLR(1'b0), // 1-bit input: Asynchronous clear
+           .D(filtered_hit) // 1-bit input: Data
       );
       // End of 2FDCE_inst instantiation
 	  end //if
 	  
 	  
-	  		else if (k == 2) begin
-        //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
-        // UltraScale
-        // Xilinx HDL Libraries Guide, version 2014.1
-        FDCE #(
-           .INIT(0), // Initial value of register, 1’b0, 1’b1
-           // Programmable Inversion Attributes: Specifies the use of the built-in programmable inversion
-           .IS_CLR_INVERTED(1'b0),   // Optional inversion for CLR
-           .IS_C_INVERTED  (1'b0),   // Optional inversion for C
-           .IS_D_INVERTED  (1'b0)    // Optional inversion for D
-        )
-        FDCE_inst (
-           .Q(valid),      // 1-bit output: Data
-           .C(clk),    // 1-bit input: Clock
-           .CE(1'b1),  // 1-bit input: Clock enable
-           .CLR(1'b0), // 1-bit input: Asynchronous clear
-           .D(~y)      // 1-bit input: Data
-      );
-      // End of 3FDCE_inst instantiation
-	  end //if
-	  
-	  	else begin
+	  		else begin
         //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
         // UltraScale
         // Xilinx HDL Libraries Guide, version 2014.1
@@ -112,11 +88,8 @@ module StopFilter #(parameter integer NFF = 4)(
       );
       // End of 3FDCE_inst instantiation
 	  end //if
-	  
 	  end //for
 	  
    endgenerate
-   
-   assign filtered_hit = ~y;
    
 endmodule
