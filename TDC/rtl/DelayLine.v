@@ -7,9 +7,9 @@
 
 module DelayLine #(parameter integer Nmux = 32)(
    
-   input wire delay_line_in,
+  (*keep = "true"*) input wire delay_line_in,
    
-   output wire [Nmux-1:0] delay_line_out
+  (*keep = "true"*) output wire [Nmux-1:0] delay_line_out
 
    );
        

@@ -6,18 +6,18 @@
 
 module StopFilter #(parameter integer NFF = 4)(
 
-   input  wire clk, //CLOCK
-   input  wire hit, 
+   (*keep = "true"*) input  wire clk, //CLOCK
+   (*keep = "true"*) input  wire hit, 
    
-   output wire filtered_hit,
-   output wire valid,
-   output wire finish
+   (*keep = "true"*) output wire filtered_hit,
+   (*keep = "true"*) output wire valid,
+   (*keep = "true"*) output wire finish
 
    );
  
-   wire not_hit = ~hit;
-   wire w;              //to connect 1 e 2 ff
-   wire y;
+   (*keep = "true"*) wire not_hit = ~hit;
+   (*keep = "true"*) wire w;              //to connect 1 e 2 ff
+   (*keep = "true"*) wire y;
       
    generate 
    
