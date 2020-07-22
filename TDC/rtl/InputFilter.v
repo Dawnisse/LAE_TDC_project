@@ -131,7 +131,7 @@ module InputFilter (
 	  end //if
 	  
 	  
-	  		  else  begin
+	  else  begin
         //FDCE: D Flip-Flop with Clock Enable and Asynchronous Clear
         // UltraScale
         // Xilinx HDL Libraries Guide, version 2014.1
@@ -150,7 +150,9 @@ module InputFilter (
            .D(filtered_hit) // 1-bit input: Data
       );
       // End of 2FDCE_inst instantiation
-	  end //if
-
+	  end //else
+	  
+	  end //for
+endgenerate
  
 endmodule

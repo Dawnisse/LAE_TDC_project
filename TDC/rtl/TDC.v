@@ -28,8 +28,8 @@ module TDC(
    input  wire clk,
    input  wire hit,
    
-   output wire  [4:0]bin_out_start,
-   output wire  [4:0]bin_out_stop,
+   output wire  [7:0]bin_out_start,
+   output wire  [7:0]bin_out_stop,
    output wire [47:0]out_count
 
 );
@@ -40,7 +40,9 @@ module TDC(
    (*keep = "true"*)wire [199:0]thermo_start_piped;
    (*keep = "true"*)wire [199:0]thermo_stop_raw;
    (*keep = "true"*)wire [199:0]thermo_stop_piped;
-   (*keep = "true"*)wire [199:0]O;
+   (*keep = "true"*)wire [194:0]one_hot_start;
+   (*keep = "true"*)wire [194:0]one_hot_stop;
+//   (*keep = "true"*)wire [199:0]O;
    (*keep = "true"*)wire start_count;
    (*keep = "true"*)wire stop_count;
    (*keep = "true"*)wire finish;
@@ -72,8 +74,8 @@ generate begin :Start_carry4_DelayLine
    
       .CI(1'b0),
 	  .trigger(filtered_start),
-	  .CO(thermo_start_raw),
-	  .O(O)
+	  .CO(thermo_start_raw)
+//	  .O(O)
    );
 
 end
@@ -109,18 +111,44 @@ endgenerate
 
 // START THERMOMETER ENCODER
 
-generate begin :STARTthermo2bin
+//In two step : thermo -> one hot , one hot -> bin AVOIDING BUBBLES
+generate begin :Start_thermo2onehot
+
+    Thermo2OneHot Start_thermo2onehot(
+	
+	   .thermo(thermo_start_piped),
+	   .one_hot(one_hot_start)
+	
+	);
+
+end
+endgenerate
+
+generate begin :Start_onehot2bin
+
+   OneHot2Bin Start_onehot2bin(
    
-   ThermometerEncoder2 STARTthermo2bin(
-   
-      .thermo(thermo_start_piped),
-	  .bin(bin_out_start)
+      .one_hot(one_hot_start),
+	  .index(bin_out_start)
    
    );
 
-end //begin thermo2bin
-
+end
 endgenerate
+
+//in one step
+//generate begin :STARTthermo2bin
+//   
+//   ThermometerEncoder2 STARTthermo2bin(
+//   
+//      .thermob(thermo_start_piped),
+//	  .bin(bin_out_start)
+//   
+//   );
+//
+//end //begin thermo2bin
+//
+//endgenerate
 
 //STOP FILTER
 
@@ -147,8 +175,8 @@ generate begin :Stop_carry4_DelayLine
    
       .CI(1'b0),
 	  .trigger(filtered_stop),
-	  .CO(thermo_stop_raw),
-	  .O(O)
+	  .CO(thermo_stop_raw)
+//	  .O(O)
    );
 
 end
@@ -186,18 +214,44 @@ endgenerate
    
 //STOP THERMOMETER ENCODER
 
-generate begin :STOPthermo2bin
-   
+//In two step : thermo -> one hot , one hot -> bin AVOIDING BUBBLES
+generate begin :Stop_thermo2onehot
 
-   ThermometerEncoder2 STOPthermo2bin(
+    Thermo2OneHot Stop_thermo2onehot(
+	
+	   .thermo(thermo_stop_piped),
+	   .one_hot(one_hot_stop)
+	
+	);
+
+end
+endgenerate
+
+generate begin :Stop_onehot2bin
+
+   OneHot2Bin Stop_onehot2bin(
    
-      .thermo(thermo_stop_piped),
-	  .bin(bin_out_stop)
+      .one_hot(one_hot_stop),
+	  .index(bin_out_stop)
    
    );
-end //begin STOPthermo2bin
 
+end
 endgenerate
+
+// In one step
+//generate begin :STOPthermo2bin
+//   
+//
+//   ThermometerEncoder2 STOPthermo2bin(
+//   
+//      .thermob(thermo_stop_piped),
+//	  .bin(bin_out_stop)
+//   
+//   );
+//end //begin STOPthermo2bin
+//
+//endgenerate
 
 //COUNTER
 

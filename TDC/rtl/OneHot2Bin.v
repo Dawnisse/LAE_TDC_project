@@ -7,18 +7,12 @@
 
 `timescale 1ns/100ps
  
-module OneHot2Bin #(
-    
-   parameter NUM_SIGNALS = 195,
-   parameter DIRECTION = "LSB0",
-   parameter INDEX_WIDTH = $clog2(NUM_SIGNALS)
-   
-   )
+module OneHot2Bin
  
    (
    
-    input      [NUM_SIGNALS - 1:0]   one_hot,
-    output reg [INDEX_WIDTH - 1:0]   index
+    (*keep = "true"*)input  wire [194:0]   one_hot,
+    output reg  [7:0]     index
 	
 	);
  
@@ -28,14 +22,12 @@ module OneHot2Bin #(
 	
         index = 0;
 		
-        for (oh_index = 0; oh_index < NUM_SIGNALS; oh_index = oh_index + 1) begin
+        for (oh_index = 0; oh_index < 195; oh_index = oh_index + 1) begin
             
 			if (one_hot[oh_index]) begin
 			
-                if (DIRECTION == "LSB0")
-                    index = index | oh_index[INDEX_WIDTH - 1:0];    // Use 'or' to avoid synthesizing priority encoder
-                else
-                    index = index | ~oh_index[INDEX_WIDTH - 1:0];
+                    index = index | oh_index[7:0];    // Use 'or' to avoid synthesizing priority encoder
+                
             end // if
         end // for
     end // always

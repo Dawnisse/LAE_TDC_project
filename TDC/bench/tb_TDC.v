@@ -28,36 +28,35 @@ module tb_TDC ;
    //   100 MHz clock generator   //
    /////////////////////////////////
 
-   wire clk200 ;
+   wire clk100 ;
 
    ClockGen   ClockGen_inst (.clk(clk100)) ;
 
-   //PLL IP CORE FOR CLOCK
+   //CLOCK_WIZ IP CORE FOR CLOCK
    
-//   wire clk100;
-//   wire clk200; 
-//   wire locked;
-//   
-//   PLL   PLL_inst( 
-//   
-//    .CLK100(clk100), 
-//	  .CLK200(clk200), 
-//	  .LOCKED(locked)
-//	  
-//	  ) ;
+   wire clk200; 
+   wire locked;
+   
+   PLL   PLL_inst( 
+   
+      .CLK100(clk100), 
+	  .CLK200(clk200), 
+	  .LOCKED(locked)
+	  
+	  ) ;
 
    
    //Device Under Test : DUT
    
    reg hit;
-   wire [4:0]bin_out_start;
-   wire [4:0]bin_out_stop;
+   wire [7:0]bin_out_start;
+   wire [7:0]bin_out_stop;
    wire [47:0]out_count;
    
    
    TDC DUT(
    
-      .clk(clk200),
+      .clk(clk200),  //change to clk200 when PLL
 	  .hit(hit),
 	  .bin_out_start(bin_out_start),
 	  .bin_out_stop(bin_out_stop),
@@ -71,8 +70,8 @@ module tb_TDC ;
    
      #0   hit = 1'b0;
 //	 @(posedge locked)  // wait for the PLL to lock
-	 #122 hit = 1'b1;
-	 #159 hit = 1'b0;
+	 #136 hit = 1'b1;
+	 #170 hit = 1'b0;
 	 #230 hit = 1'b1;
 	 #253 hit = 1'b0;
 	 

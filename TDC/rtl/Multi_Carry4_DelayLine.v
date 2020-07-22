@@ -8,14 +8,15 @@
 module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 50)(
 
    input  wire CI,                       //First MUX input
-   //input  wire [Ncarry4-1:0]CYINIT,    //First MUX input
    input  wire trigger,                  //First CYINIT
 				
-   (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]CO, 
-   (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]O   //
+   (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]CO
+//   (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]O   
 
    );
-   
+
+   wire [3+(Ncarry4-1)*4:0]O;   
+  
    generate 
    
       genvar k ;
@@ -60,5 +61,3 @@ module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 50)(
  
 endmodule
 
-//wire net;
-//assign net = a ? 1'b1 : (b ? 1'b0 : 1'bx);

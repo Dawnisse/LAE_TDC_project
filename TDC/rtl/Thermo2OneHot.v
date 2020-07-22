@@ -19,8 +19,8 @@
 module Thermo2OneHot (
 
    input  wire [199:0]  thermo,    // 32-bit thermometer output code
-   output wire [194:0]   one_hot        //  5-bit base-2 binary input code
-
+  (*keep = "true"*) output wire [194:0]  one_hot    //  5-bit base-2 binary input code
+  
    ) ;
 
 generate

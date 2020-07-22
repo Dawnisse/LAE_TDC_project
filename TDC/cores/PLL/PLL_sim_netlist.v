@@ -1,9 +1,9 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu May 14 15:30:52 2020
+// Date        : Tue Jul 21 18:45:15 2020
 // Host        : DESKTOP-4AILNFN running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim c:/Users/Chiara/Desktop/lae/fpga/labs/lab7/cores/PLL/PLL_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim C:/Users/Chiara/Desktop/LAE_TDC_project/TDC/cores/PLL/PLL_sim_netlist.v
 // Design      : PLL
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
