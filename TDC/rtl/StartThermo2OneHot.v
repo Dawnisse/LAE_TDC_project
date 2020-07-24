@@ -16,38 +16,46 @@
 
 `timescale 1ns / 100ps
 
-module Thermo2OneHot (
+module StartThermo2OneHot (
 
    input  wire [207:0]  thermo,    // 32-bit thermometer output code
-  (*keep = "true"*) output wire [170:0]  one_hot    //  5-bit base-2 binary input code
+   output wire [203:0]  one_hot    //  5-bit base-2 binary input code
   
    ) ;
 
 generate
 
-   genvar k;
-   
-   for (k = 0; k <= 170 ; k = k + 1) begin
-
-// LUT6: 6-input Look-Up Table with general output
-// 7 Series
-// Xilinx HDL Libraries Guide, version 2012.2
-   LUT6 #(
-   .INIT(64'h4000000000000000) // Specify LUT Contents
-   ) 
-   LUT6_inst (
-      .O ( one_hot[k]), // LUT general output
-      .I0(  thermo[k]), // LUT input
-      .I1(thermo[k+1]), // LUT input
-      .I2(thermo[k+2]), // LUT input
-      .I3(thermo[k+3]), // LUT input
-      .I4(thermo[k+4]), // LUT input
-      .I5(thermo[k+5]) // LUT input
-   );
-// End of LUT6_inst instantiation
-
-   end //for
-endgenerate
+    genvar k;
+    for (k = 0; k <= 203 ; k = k + 1) begin
+	
+	assign  one_hot[k] = thermo[k] && thermo[k+1] && thermo[k+2] && thermo[k+3] && ~thermo[k+4];
+	   
+	end //for
+endgenerate   
+//generate
+//
+//   genvar k;
+//   
+//   for (k = 0; k <= 203 ; k = k + 1) begin
+//
+//    
+//    //LUT5: 5-input Look-Up Table with general output (Mapped to a LUT6)
+//    // 7 Series
+//    // Xilinx HDL Libraries Guide, version 2012.2
+//       LUT5 #(
+//       .INIT() // Specify LUT Contents
+//       ) LUT5_inst (
+//          .O ( one_hot[k]), // LUT general output
+//          .I0(  thermo[k]), // LUT input
+//          .I1(thermo[k+1]), // LUT input
+//          .I2(thermo[k+2]), // LUT input
+//          .I3(thermo[k+3]), // LUT input
+//          .I4(thermo[k+4]) // LUT input
+//       );
+//    // End of LUT5_inst instantiation
+//
+//   end //for
+//endgenerate
 	  
 endmodule
 

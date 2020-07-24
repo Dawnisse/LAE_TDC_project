@@ -5,13 +5,13 @@
 `timescale 1ns / 1ps
 
 
-module Multi_Carry4_DelayLine #(parameter integer Ncarry4 = 44)(
+module Multi_Carry4_Start_DelayLine #(parameter integer Ncarry4 = 52)(
 
    input  wire CI,                       //First MUX input
    input  wire trigger,                  //First CYINIT
 				
    (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]CO
-//   (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]O   
+// (*keep = "true"*)output wire [3+(Ncarry4-1)*4:0]O   
 
    );
 

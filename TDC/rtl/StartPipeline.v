@@ -22,7 +22,7 @@
 
 `timescale 1ns / 100ps
 
-module Pipeline #(parameter integer NFF=208 )(
+module StartPipeline #(parameter integer NFF= 208 )(
 
    input  wire clk, //CLOCK
    input  wire [NFF-1:0]pipe_in,  

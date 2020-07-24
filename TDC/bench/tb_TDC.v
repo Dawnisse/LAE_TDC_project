@@ -20,7 +20,7 @@
 //--
 //---------------------------------------------------------------------------------//
 
-`timescale 1ns / 100ps
+`timescale 1ns / 1ps
 
 module tb_TDC ;
 
@@ -34,32 +34,31 @@ module tb_TDC ;
 
    //CLOCK_WIZ IP CORE FOR CLOCK
    
-   wire clk200; 
-   wire locked;
-   
-   PLL   PLL_inst( 
-   
-      .CLK100(clk100), 
-	  .CLK200(clk200), 
-	  .LOCKED(locked)
-	  
-	  ) ;
+//   wire clk200; 
+//   wire locked;
+//   
+//   PLL   PLL_inst( 
+//   
+//      .CLK100(clk100), 
+//	  .CLK200(clk200), 
+//	  .LOCKED(locked)
+//	  
+//	  ) ;
 
    
    //Device Under Test : DUT
    
    reg hit;
-   wire [7:0]bin_out_start;
-   wire [7:0]bin_out_stop;
    wire [47:0]out_count;
-   
+   wire [203:0]one_hot_start;
+   wire [175:0]one_hot_stop;
    
    TDC DUT(
    
-      .clk(clk200),  //change to clk200 when PLL
+      .clk(clk100),  //change to clk200 when PLL
 	  .hit(hit),
-	  .bin_out_start(bin_out_start),
-	  .bin_out_stop(bin_out_stop),
+	  .one_hot_start(one_hot_start),
+      .one_hot_stop(one_hot_stop),
 	  .out_count(out_count)
     
    );
@@ -71,9 +70,9 @@ module tb_TDC ;
      #0   hit = 1'b0;
 //	 @(posedge locked)  // wait for the PLL to lock
 	 #136 hit = 1'b1;
-	 #170 hit = 1'b0;
-	 #230 hit = 1'b1;
-	 #253 hit = 1'b0;
+	 #80 hit = 1'b0;
+	 #226 hit = 1'b1;
+	 #255 hit = 1'b0;
 	 
 	 #300 $finish ;  
    

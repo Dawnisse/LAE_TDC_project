@@ -11,7 +11,7 @@ module OneHot2Bin
  
    (
    
-    (*keep = "true"*)input  wire [194:0]   one_hot,
+    (*keep = "true"*)input  wire [174:0]   one_hot,
     output reg  [7:0]     index
 	
 	);
@@ -22,7 +22,7 @@ module OneHot2Bin
 	
         index = 0;
 		
-        for (oh_index = 0; oh_index < 195; oh_index = oh_index + 1) begin
+        for (oh_index = 0; oh_index < 175; oh_index = oh_index + 1) begin
             
 			if (one_hot[oh_index]) begin
 			

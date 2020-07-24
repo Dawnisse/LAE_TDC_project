@@ -2,7 +2,7 @@
 //
 //
 
-`define Num_MUX 4
+
 `timescale 1ns / 100ps
 
 module tb_DelayLine ;
@@ -18,12 +18,12 @@ module tb_DelayLine ;
    // Device Under Test: DUT
    
    reg  filtered_hit;
-   wire [3:0]Z;
+   wire [31:0]Z;
 
-   DelayLine #(.Nmux(`Num_MUX)) DUT (
+   DelayLine #(.Nmux(32)) DUT (
    
-      .filtered_hit(filtered_hit), 
-      .Z(Z)
+      .delay_line_in(filtered_hit), 
+      .delay_line_out(Z)
 	  
       ) ;  //CONNECTION
 
