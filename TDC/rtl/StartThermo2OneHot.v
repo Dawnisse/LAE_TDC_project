@@ -18,15 +18,15 @@
 
 module StartThermo2OneHot (
 
-   input  wire [207:0]  thermo,    // 32-bit thermometer output code
-   output wire [203:0]  one_hot    //  5-bit base-2 binary input code
+   input  wire [175:0]  thermo,    // 32-bit thermometer output code
+   output wire [171:0]  one_hot    //  5-bit base-2 binary input code
   
    ) ;
 
 generate
 
     genvar k;
-    for (k = 0; k <= 203 ; k = k + 1) begin
+    for (k = 0; k <= 171 ; k = k + 1) begin
 	
 	assign  one_hot[k] = thermo[k] && thermo[k+1] && thermo[k+2] && thermo[k+3] && ~thermo[k+4];
 	   

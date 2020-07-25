@@ -1,0 +1,604 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 4356
+License: Customer
+
+Current time: 	Sat Jul 25 14:22:43 CEST 2020
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 750 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinxa/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinxa/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Giacomo
+User home directory: C:/Users/Giacomo
+User working directory: C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI_BASEROOT: C:/Xilinxa/Vivado
+HDI_APPROOT: C:/Xilinxa/Vivado/2019.2
+RDI_DATADIR: C:/Xilinxa/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinxa/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/Giacomo/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/Giacomo/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/Giacomo/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinxa/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/logs/project.log
+Vivado journal file location: 	
+Engine tmp dir: 	C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/.Xil/Vivado-4356-DESKTOP-08P34B4
+
+Xilinx Environment Variables
+----------------------------
+VIVADO_DIR: C:\Xilinxa
+XILINX: C:/Xilinxa/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinxa/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinxa/Vivado/2019.2
+XILINX_VIVADO: C:/Xilinxa/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinxa/Vivado/2019.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 596 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 67 MB (+67756kb) [00:00:46]
+// [Engine Memory]: 544 MB (+418789kb) [00:00:46]
+// [GUI Memory]: 103 MB (+34733kb) [00:00:49]
+// Tcl Message: #----------------------------------------------------------- # Vivado v2019.2 (64-bit) # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019 # Start of session at: Sat Jul 25 14:21:04 2020 # Process ID: 4356 # Current directory: C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC # Command line: vivado.exe -mode tcl -source scripts/common/init.tcl -source scripts/common/project.tcl -log logs/project.log -nojournal -verbose -notrace -tclargs TDC # Log file: C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/logs/project.log # Journal file:  #----------------------------------------------------------- 
+// Tcl Message: source scripts/common/init.tcl -notrace 
+// Tcl Message:  Sourcing init file C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/init.tcl  
+// Tcl Message: source scripts/common/project.tcl -notrace 
+// Tcl Message: create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 298.648 ; gain = 0.000 
+// Tcl Message:  Successfully created new Vivado project TDC attached to xc7a35ticsg324-1L device. Project XML file is C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.xpr   Vivado% 
+// Tcl Message: start_gui 
+// [Engine Memory]: 571 MB (+120kb) [00:00:53]
+// [GUI Memory]: 109 MB (+730kb) [00:00:54]
+// HMemoryUtils.trashcanNow. Engine heap size: 596 MB. GUI used memory: 48 MB. Current time: 7/25/20, 2:22:45 PM CEST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+// Elapsed time: 15 seconds
+selectButton("NEXT", "Next >"); // JButton (j, c)
+// [Engine Memory]: 607 MB (+7944kb) [00:02:55]
+// Elapsed time: 27 seconds
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+// Elapsed time: 38 seconds
+String[] filenames31467 = {"C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Counter.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Start_DelayLine.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Stop_DelayLine.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartPipeline.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartThermo2OneHot.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopPipeline.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopThermo2OneHot.v"};
+setFileChooser(filenames31467);
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+setFileChooser("C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/TDC.v");
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 238ms to process. Increasing delay to 2000 ms.
+// Elapsed time: 10 seconds
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 100 seconds
+dismissDialog("Add Sources"); // c (cr)
+// TclEventType: DG_GRAPH_STALE
+// bB (cr):  Add Sources  : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/TDC.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Counter.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartPipeline.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartThermo2OneHot.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Start_DelayLine.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Stop_DelayLine.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopPipeline.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopThermo2OneHot.v} 
+dismissDialog("Add Sources"); // bB (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a (o, c)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 619 MB. GUI used memory: 49 MB. Current time: 7/25/20, 2:25:55 PM CEST
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+// Elapsed time: 17 seconds
+String[] filenames16706 = {"C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/ClockGen.v", "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_TDC.v"};
+setFileChooser(filenames16706);
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 26 seconds
+dismissDialog("Add Sources"); // c (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// bB (cr):  Add Simulation Sources  : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset sim_1 -norecurse {C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_TDC.v C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/ClockGen.v} 
+dismissDialog("Add Simulation Sources"); // bB (cr)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 502ms to process. Increasing delay to 3000 ms.
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// f (cr): Launch Runs: addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bB (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cr)
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Jul 25 14:26:30 2020] Launched synth_1... Run output will be captured here: C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 7 seconds
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // bB (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1220 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1648 ms. Increasing delay to 3000 ms.
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 791ms to process. Increasing delay to 3000 ms.
+// aj (cr): Synthesis Completed: addNotify
+// Elapsed time: 117 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN, "Open Synthesized Design"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// bB (cr):  Open Synthesized Design : addNotify
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7a35ticsg324-1L 
+// HMemoryUtils.trashcanNow. Engine heap size: 672 MB. GUI used memory: 51 MB. Current time: 7/25/20, 2:28:30 PM CEST
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 980 MB. GUI used memory: 51 MB. Current time: 7/25/20, 2:28:43 PM CEST
+// [Engine Memory]: 980 MB (+358492kb) [00:06:55]
+// Xgd.load filename: C:/Xilinxa/Vivado/2019.2/data/parts/xilinx/artix7/devint/artix7/xc7a35t/xc7a35t.xgd; ZipEntry: xc7a35t_detail.xgd elapsed time: 1.6s
+// [Engine Memory]: 1,078 MB (+51427kb) [00:06:59]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.1s
+// TclEventType: DESIGN_NEW
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  6489 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35ticsg324-1L 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 901.055 ; gain = 0.000 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 134 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.2 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 980.875 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: open_run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1115.629 ; gain = 462.047 
+// Device view-level: 0,0
+// WARNING: HEventQueue.dispatchEvent() is taking  1281 ms.
+// [GUI Memory]: 116 MB (+1568kb) [00:07:09]
+// 'dQ' command handler elapsed time: 27 seconds
+// [GUI Memory]: 139 MB (+17931kb) [00:07:09]
+// WARNING: HEventQueue.dispatchEvent() is taking  1143 ms.
+// Elapsed time: 27 seconds
+dismissDialog("Open Synthesized Design"); // bB (cr)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cr)
+// [Engine Memory]: 1,165 MB (+34912kb) [00:07:21]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,172 MB. GUI used memory: 82 MB. Current time: 7/25/20, 2:29:10 PM CEST
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_SYNTHESIS_TIMING, "Run Post-Synthesis Timing Simulation"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_SYNTHESIS_TIMING
+// TclEventType: FILE_SET_CHANGE
+// e (cr):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation -mode post-synthesis -type timing 
+// Tcl Message: Command: launch_simulation -mode post-synthesis -type timing 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching post-synthesis timing simulation in 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim' 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'... INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/tb_TDC_time_synth.v" INFO: [SIM-utils-27] Writing SDF file... INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/tb_TDC_time_synth.sdf" 
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 226ms to process. Increasing delay to 2000 ms.
+// RouteApi::initDelayMediator elapsed time: 23.1s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: write_sdf: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1567.031 ; gain = 362.848 
+// Tcl Message: INFO: [SIM-utils-36] Netlist generated:C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/tb_TDC_time_synth.v INFO: [SIM-utils-37] SDF generated:C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/tb_TDC_time_synth.sdf INFO: [SIM-utils-54] Inspecting design source files for 'tb_TDC' in fileset 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj tb_TDC_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 1567.031 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '13' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim' 
+// Tcl Message: "xelab -wto 78d5f8836cf94afcafe60c68cdbd51ff --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_TDC_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_TDC xil_defaultlib.glbl -log elaborate.log" 
+// Tcl Message: Vivado Simulator 2019.2 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinxa/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 78d5f8836cf94afcafe60c68cdbd51ff --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_TDC_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_TDC xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration Pass Through NonSizing Optimizer 
+// Tcl Message: Completed static elaboration 
+// [Engine Memory]: 1,528 MB (+319849kb) [00:08:01]
+// Tcl Message: Starting simulation data flow analysis 
+// Tcl Message: Completed simulation data flow analysis INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "tb_TDC_time_synth.sdf", for root module "tb_TDC/DUT". INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "tb_TDC_time_synth.sdf", for root module "tb_TDC/DUT". Time Resolution for simulation is 1ps Compiling module xil_defaultlib.ClockGen Compiling module simprims_ver.CARRY4 Compiling module xil_defaultlib.Multi_Carry4_Start_DelayLine Compiling module simprims_ver.FDCE_default Compiling module simprims_ver.LUT5 Compiling module xil_defaultlib.StartPipeline 
+// Tcl Message: Compiling module xil_defaultlib.StartThermo2OneHot Compiling module xil_defaultlib.Multi_Carry4_Stop_DelayLine Compiling module xil_defaultlib.StopPipeline 
+// Tcl Message: Compiling module xil_defaultlib.StopThermo2OneHot 
+// Tcl Message: Compiling module simprims_ver.BUFG Compiling module simprims_ver.IBUF Compiling module simprims_ver.DSP48E1(ADREG=0,DREG=0,MREG=0,US... Compiling module xil_defaultlib.COUNTER_TC_MACRO_viv_ Compiling module simprims_ver.x_lut2_mux4 Compiling module simprims_ver.LUT2 Compiling module xil_defaultlib.Counter Compiling module simprims_ver.OBUF Compiling module xil_defaultlib.TDC Compiling module xil_defaultlib.tb_TDC Compiling module xil_defaultlib.glbl 
+// Tcl Message: Built simulation snapshot tb_TDC_time_synth 
+// Tcl Message:  ****** Webtalk v2019.2 (64-bit)   **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.  source C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/xsim.dir/tb_TDC_time_synth/webtalk/xsim_webtalk.tcl -notrace 
+// Tcl Message: INFO: [Common 17-186] 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/xsim.dir/tb_TDC_time_synth/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jul 25 14:30:50 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinxa/Vivado/2019.2/doc/webtalk_introduction.html. webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 79.746 ; gain = 10.328 INFO: [Common 17-206] Exiting Webtalk at Sat Jul 25 14:30:50 2020... 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: run_program: Time (s): cpu = 00:00:06 ; elapsed = 00:01:12 . Memory (MB): peak = 1567.031 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '72' seconds INFO: [USF-XSim-4] XSim::Simulate design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "tb_TDC_time_synth -key {Post-Synthesis:sim_1:Timing:tb_TDC} -tclbatch {tb_TDC.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Vivado Simulator 2019.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  2454 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 107 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1759 ms.
+// Tcl Message: source tb_TDC.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 86 MB. Current time: 7/25/20, 2:31:01 PM CEST
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: # run 1000ns 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xsim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1593.668 ; gain = 26.637 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_TDC_time_synth' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1593.668 ; gain = 397.668 
+// 'd' command handler elapsed time: 112 seconds
+dismissDialog("Run Simulation"); // e (cr)
+// WARNING: HTimer (Init Timing Data Timer) is taking 117ms to process. Increasing delay to 1500 ms.
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "DUT ; TDC ; Verilog Module", 2, "DUT", 0, true); // c (c, cr) - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_stop_raw[339:164] ; 00000000000000000000000000000000000000000000 ; Array", 10, "thermo_stop_raw[339:164]", 0, true, false, true, false, false, false); // c (c, cr) - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_stop_piped[175:0] ; 00000000000000000000000000000000000000000000 ; Array", 9, "thermo_stop_piped[175:0]", 0, true, false, true, false, false, false); // c (c, cr) - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_start_raw[191:16] ; 00000000000000000000000000000000000000000000 ; Array", 8, "thermo_start_raw[191:16]", 0, true, false, true, false, false, false); // c (c, cr) - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_start_piped[175:0] ; 00000000000000000000000000000000000000000000 ; Array", 7, "thermo_start_piped[175:0]", 0, true, false, true, false, false, false); // c (c, cr) - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_stop_piped[175:0] ; 00000000000000000000000000000000000000000000 ; Array", 9, "thermo_stop_piped[175:0]", 0, true, false, false, false, true, false); // c (c, cr) - Popup Trigger - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "thermo_stop_piped[175:0] ; 00000000000000000000000000000000000000000000 ; Array", 9, "thermo_stop_piped[175:0]", 0, true, false, false, false, true, false); // c (c, cr) - Popup Trigger - Node
+selectMenuItem((HResource) null, "Add to Wave Window"); // ai (ao, cr)
+// Tcl Command: 'current_wave_config {Untitled 1}'
+// Tcl Message: current_wave_config {Untitled 1} 
+// Tcl Message: Untitled 1 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// Tcl Message: add_wave {{/tb_TDC/DUT/thermo_start_piped}} {{/tb_TDC/DUT/thermo_start_raw}} {{/tb_TDC/DUT/thermo_stop_piped}} {{/tb_TDC/DUT/thermo_stop_raw}}  
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Command: 'rdi::info_commands {r*}'
+// Tcl Command: 'rdi::info_commands {res*}'
+// Tcl Command: 'rdi::info_commands {resta*}'
+// Tcl Command: 'rdi::info_commands {restar*}'
+// Tcl Command: 'rdi::info_commands {restart*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "restart", true); // aF (ac, cr)
+// Tcl Command: 'restart'
+// Tcl Command: 'restart'
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: restart 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// WARNING: HEventQueue.dispatchEvent() is taking  1452 ms.
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// bB (cr):  Tcl Command Line : addNotify
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// Tcl Message: INFO: [Simtcl 6-17] Simulation restarted 
+dismissDialog("Tcl Command Line"); // bB (cr)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Command: 'rdi::info_commands {r*}'
+// Tcl Command: 'rdi::info_commands {ru*}'
+// Tcl Command: 'rdi::info_commands {run*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "run all", true); // aF (ac, cr)
+// Tcl Command: 'run all'
+// Tcl Command: 'run all'
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: run all 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 86 MB. Current time: 7/25/20, 2:31:37 PM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: $finish called at time : 1001 ns : File "C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_TDC.v" Line 77 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// bB (cr):  Tcl Command Line : addNotify
+dismissDialog("Tcl Command Line"); // bB (cr)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Elapsed time: 45 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1*", 0); // i (h, cr)
+// Waveform: addNotify
+// Waveform: addNotify
+// Waveform: addNotify
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, cr)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: float view
+// Waveform: addNotify
+// Waveform: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 88 MB. Current time: 7/25/20, 2:32:32 PM CEST
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: dock view
+// Waveform: addNotify
+// Waveform: addNotify
+// Waveform: addNotify
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, cr)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: float view
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 88 MB. Current time: 7/25/20, 2:32:35 PM CEST
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 376, 304, false, false, false, true, false); // n (o, aN) - Popup Trigger
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 321, 206); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 108 MB. Current time: 7/25/20, 2:32:40 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:32:49 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 10 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_start_piped[175:0]]", 5, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:32:54 PM CEST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_stop_piped[175:0]]", 7, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 145, 145); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 92 MB. Current time: 7/25/20, 2:33:02 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:33:03 PM CEST
+// Elapsed time: 27 seconds
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_start_piped[175:0]]", 6); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 148 MB (+2107kb) [00:11:42]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:33:32 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:37 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:40 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:41 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 98 MB. Current time: 7/25/20, 2:33:42 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:44 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:46 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 97 MB. Current time: 7/25/20, 2:33:47 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:33:50 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:33:50 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:33:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 30 seconds
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_start_piped[175:0]]", 6); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 90 MB. Current time: 7/25/20, 2:34:15 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:17 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// WARNING: HEventQueue.dispatchEvent() is taking  1160 ms.
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:19 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:19 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:20 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 96 MB. Current time: 7/25/20, 2:34:20 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 49 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 270, 228); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:49 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:49 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:50 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:51 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:51 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 92 MB. Current time: 7/25/20, 2:34:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:53 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 351, 329); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:34:55 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 264, 212); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 92 MB. Current time: 7/25/20, 2:35:01 PM CEST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_stop_raw[339:164]]", 7, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_stop_raw[339:164]]", 7, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, thermo_stop_raw[339:164]]", 7, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 24 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 247, 218); // n (o, cr)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 247, 218); // n (o, cr)Waveform: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,528 MB. GUI used memory: 91 MB. Current time: 7/25/20, 2:35:40 PM CEST
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, aN)
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1*"); // aA (aL, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: Untitled 1*: dock view
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 271 seconds
+selectButton(PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS, "details"); // h (ds, cr)
+selectButton(PAResourceQtoS.StaleMoreAction_FORCE_UP_TO_DATE, "Force up-to-date"); // h (n, ResizableWindow)
+// Tcl Message: set_property needs_refresh false [get_runs synth_1] 
+// bB (cr):  Force Current Runs Up-to-date : addNotify
+// Tcl Message: set_property needs_refresh false [get_runs impl_1] 
+dismissDialog("Force Current Runs Up-to-date"); // bB (cr)
+// Tcl Command: 'rdi::info_commands {r*}'
+// Tcl Command: 'rdi::info_commands {re*}'
+// Tcl Command: 'rdi::info_commands {rel*}'
+// Tcl Command: 'rdi::info_commands {rela*}'
+// Tcl Command: 'rdi::info_commands {relau*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "relau", true); // aF (ac, cr)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "relaunch_sim"); // aF (ac, cr)
+// Tcl Command: 'relaunch_sim'
+// Tcl Command: 'relaunch_sim'
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// Tcl Message: relaunch_sim 
+// bB (cr):  Tcl Command Line : addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (bB)
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. 
+// Elapsed time: 59 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (bB)
+// Elapsed time: 79 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "abort", true); // aF (ac, cr)
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aF (ac, cr)
+closeMainWindow("TDC - [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.xpr] - Vivado 2019.2"); // cr
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'

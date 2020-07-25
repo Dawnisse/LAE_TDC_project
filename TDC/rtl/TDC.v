@@ -20,6 +20,9 @@
 //--
 //---------------------------------------------------------------------------------//
 
+//1 clk = 5 ns, 176 delay elements, 44 carry4
+//delay start = 17 delay elements, 4 carry4
+//delay stop = circa -13 delay elements, facciamo la catena da 164 + 176 elementi 
 
 `timescale 1ns / 1ps
 
@@ -28,18 +31,18 @@ module TDC(
    input  wire clk,
    input  wire hit,
    
-   output wire [203:0]one_hot_start,
-   output wire [175:0]one_hot_stop,
+   output wire [171:0]one_hot_start,
+   output wire [171:0]one_hot_stop,
    output wire [47:0] out_count
 
 );
 
 //   (*keep = "true"*)wire filtered_start;
 //   (*keep = "true"*)wire filtered_stop;
-     wire [207:0]thermo_start_raw;
-     wire [207:0]thermo_start_piped;
-     wire [179:0]thermo_stop_raw;
-     wire [179:0]thermo_stop_piped;
+     wire [191:0]thermo_start_raw;
+     wire [175:0]thermo_start_piped;
+     wire [339:0]thermo_stop_raw;
+     wire [175:0]thermo_stop_piped;
      
 //   (*keep = "true"*)wire start_count;
 //   (*keep = "true"*)wire stop_count;
@@ -172,7 +175,7 @@ generate begin :Stop_carry4_DelayLine
    Multi_Carry4_Stop_DelayLine Stop_carry4_DelayLine(
    
       .CI(1'b0),
-	  .trigger(~hit && thermo_start_piped[207]),
+	  .trigger(~hit && thermo_start_piped[175]),
 	  .CO(thermo_stop_raw)
 //	  .O(O)
    );
@@ -260,7 +263,7 @@ generate begin :counter
       .start_count(thermo_start_piped[0]),
 	  .stop_count(thermo_stop_piped[0]),
 	  .clk(clk),
-	  .reset(thermo_stop_piped[179]),
+	  .reset(thermo_stop_piped[175]),
 	  .count(out_count)
    
    );
@@ -271,3 +274,8 @@ endgenerate
 
 
 endmodule
+
+
+
+
+

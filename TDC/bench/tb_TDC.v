@@ -50,8 +50,8 @@ module tb_TDC ;
    
    reg hit;
    wire [47:0]out_count;
-   wire [203:0]one_hot_start;
-   wire [175:0]one_hot_stop;
+   wire [171:0]one_hot_start;
+   wire [171:0]one_hot_stop;
    
    TDC DUT(
    
@@ -69,7 +69,7 @@ module tb_TDC ;
    
      #0   hit = 1'b0;
 //	 @(posedge locked)  // wait for the PLL to lock
-	 #136 hit = 1'b1;
+	 #140 hit = 1'b1;
 	 #80 hit = 1'b0;
 	 #226 hit = 1'b1;
 	 #255 hit = 1'b0;

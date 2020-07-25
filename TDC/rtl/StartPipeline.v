@@ -21,11 +21,11 @@
 //---------------------------------------------------------------------------------//
 
 `timescale 1ns / 100ps
-
-module StartPipeline #(parameter integer NFF= 208 )(
+//prima era 208
+module StartPipeline #(parameter integer NFF= 176 )(
 
    input  wire clk, //CLOCK
-   input  wire [NFF-1:0]pipe_in,  
+   input  wire [NFF+15:0]pipe_in,  
    
    output wire [NFF-1:0]pipe_out 
 
@@ -52,7 +52,7 @@ module StartPipeline #(parameter integer NFF= 208 )(
            .C(clk),         // 1-bit input: Clock
            .CE(1'b1),       // 1-bit input: Clock enable
            .CLR(1'b0),      // 1-bit input: Asynchronous clear
-           .D(pipe_in[k])   // 1-bit input: Data
+           .D(pipe_in[k+16])   // 1-bit input: Data
       );
       // End of 3FDCE_inst instantiation
 	  

@@ -4,8 +4,7 @@
 
 `timescale 1ns / 1ps
 
-
-module Multi_Carry4_Stop_DelayLine #(parameter integer Ncarry4 = 45)(
+module Multi_Carry4_Stop_DelayLine #(parameter integer Ncarry4 = 85)(
 
    input  wire CI,                       //First MUX input
    input  wire trigger,                  //First CYINIT
