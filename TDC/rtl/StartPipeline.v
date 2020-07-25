@@ -22,7 +22,7 @@
 
 `timescale 1ns / 100ps
 //prima era 208
-module StartPipeline #(parameter integer NFF = 209 )(
+module StartPipeline #(parameter integer NFF = 176 )(
 
    input  wire clk, //CLOCK
    input  wire [NFF+23:0]pipe_in,  
