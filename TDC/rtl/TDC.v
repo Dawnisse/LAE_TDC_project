@@ -21,7 +21,7 @@
 //---------------------------------------------------------------------------------//
 
 //1 clk = 5 ns, 176 delay elements, 44 carry4
-//delay start = 17 delay elements, 4 carry4
+//delay start = 17 delay elements, 4 carry4, facciamo 2 alla fine 
 //delay stop = circa -13 delay elements, facciamo la catena da 164 + 176 elementi 
 
 `timescale 1ns / 1ps
@@ -39,7 +39,7 @@ module TDC(
 
 //   (*keep = "true"*)wire filtered_start;
 //   (*keep = "true"*)wire filtered_stop;
-     wire [191:0]thermo_start_raw;
+     wire [183:0]thermo_start_raw;
      wire [175:0]thermo_start_piped;
      wire [339:0]thermo_stop_raw;
      wire [175:0]thermo_stop_piped;

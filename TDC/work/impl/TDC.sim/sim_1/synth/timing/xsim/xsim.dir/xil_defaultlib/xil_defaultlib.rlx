@@ -1,0 +1,7 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/ClockGen.v,1595663589,verilog,,C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_TDC.v,,ClockGen,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/tb_TDC.v,1595672730,verilog,,,,tb_TDC,,,,,,,,
+C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.sim/sim_1/synth/timing/xsim/tb_TDC_time_synth.v,1595753291,verilog,,C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/bench/ClockGen.v,,COUNTER_TC_MACRO_viv_;Counter;Multi_Carry4_Start_DelayLine;Multi_Carry4_Stop_DelayLine;StartPipeline;StartThermo2OneHot;StopPipeline;StopThermo2OneHot;TDC;glbl,,,,,,,,

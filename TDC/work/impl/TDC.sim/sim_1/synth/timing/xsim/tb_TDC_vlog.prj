@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_TDC_time_synth.v" \
+"../../../../../../../bench/ClockGen.v" \
+"../../../../../../../bench/tb_TDC.v" \
+
+# Do not sort compile order
+nosort

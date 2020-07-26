@@ -1,0 +1,34 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinxa/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 75b99a8c53c241be903f532968f70f0e --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot tb_TDC_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.tb_TDC xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "tb_TDC_time_synth.sdf", for root module "tb_TDC/DUT".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "tb_TDC_time_synth.sdf", for root module "tb_TDC/DUT".
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ClockGen
+Compiling module simprims_ver.CARRY4
+Compiling module xil_defaultlib.Multi_Carry4_Start_DelayLine
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.FDCE_default
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.StartPipeline
+Compiling module xil_defaultlib.StartThermo2OneHot
+Compiling module xil_defaultlib.Multi_Carry4_Stop_DelayLine
+Compiling module xil_defaultlib.StopPipeline
+Compiling module xil_defaultlib.StopThermo2OneHot
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.DSP48E1(ADREG=0,DREG=0,MREG=0,US...
+Compiling module xil_defaultlib.COUNTER_TC_MACRO_viv_
+Compiling module xil_defaultlib.Counter
+Compiling module simprims_ver.OBUF
+Compiling module xil_defaultlib.TDC
+Compiling module xil_defaultlib.tb_TDC
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_TDC_time_synth

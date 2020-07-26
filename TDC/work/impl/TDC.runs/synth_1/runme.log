@@ -1,0 +1,413 @@
+
+*** Running vivado
+    with args -log TDC.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TDC.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source TDC.tcl -notrace
+Command: synth_design -top TDC -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5380 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 507.551 ; gain = 210.016
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'TDC' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/TDC.v:29]
+INFO: [Synth 8-6157] synthesizing module 'Multi_Carry4_Start_DelayLine' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Start_DelayLine.v:7]
+	Parameter Ncarry4 bound to: 46 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Start_DelayLine.v:12]
+INFO: [Synth 8-6157] synthesizing module 'CARRY4' [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1479]
+INFO: [Synth 8-6155] done synthesizing module 'CARRY4' (1#1) [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1479]
+INFO: [Synth 8-6155] done synthesizing module 'Multi_Carry4_Start_DelayLine' (2#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Start_DelayLine.v:7]
+INFO: [Synth 8-6157] synthesizing module 'StartPipeline' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartPipeline.v:25]
+	Parameter NFF bound to: 176 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FDCE' [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13492]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_CLR_INVERTED bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDCE' (3#1) [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:13492]
+INFO: [Synth 8-6155] done synthesizing module 'StartPipeline' (4#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartPipeline.v:25]
+INFO: [Synth 8-6157] synthesizing module 'StartThermo2OneHot' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartThermo2OneHot.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'StartThermo2OneHot' (5#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StartThermo2OneHot.v:19]
+INFO: [Synth 8-6157] synthesizing module 'Multi_Carry4_Stop_DelayLine' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Stop_DelayLine.v:7]
+	Parameter Ncarry4 bound to: 85 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Stop_DelayLine.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'Multi_Carry4_Stop_DelayLine' (6#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Multi_Carry4_Stop_DelayLine.v:7]
+INFO: [Synth 8-6157] synthesizing module 'StopPipeline' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopPipeline.v:25]
+	Parameter NFF bound to: 176 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'StopPipeline' (7#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopPipeline.v:25]
+INFO: [Synth 8-6157] synthesizing module 'StopThermo2OneHot' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopThermo2OneHot.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'StopThermo2OneHot' (8#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/StopThermo2OneHot.v:19]
+INFO: [Synth 8-6157] synthesizing module 'Counter' [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Counter.v:7]
+INFO: [Synth 8-6157] synthesizing module 'LUT2' [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39123]
+	Parameter INIT bound to: 4'b0010 
+INFO: [Synth 8-6155] done synthesizing module 'LUT2' (9#1) [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:39123]
+INFO: [Synth 8-6157] synthesizing module 'COUNTER_TC_MACRO' [C:/Xilinxa/Vivado/2019.2/data/verilog/src/unimacro/COUNTER_TC_MACRO.v:24]
+	Parameter COUNT_BY bound to: 48'b000000000000000000000000000000000000000000000001 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DIRECTION bound to: UP - type: string 
+	Parameter RESET_UPON_TC bound to: FALSE - type: string 
+	Parameter TC_VALUE bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter STYLE bound to: DSP - type: string 
+	Parameter WIDTH_DATA bound to: 48 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1' [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:12448]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 0 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 0 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter IS_ALUMODE_INVERTED bound to: 4'b0000 
+	Parameter IS_CARRYIN_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_INMODE_INVERTED bound to: 5'b00000 
+	Parameter IS_OPMODE_INVERTED bound to: 7'b0000000 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 0 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: FALSE - type: string 
+	Parameter USE_MULT bound to: NONE - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1' (10#1) [C:/Xilinxa/Vivado/2019.2/scripts/rt/data/unisim_comp.v:12448]
+INFO: [Synth 8-6155] done synthesizing module 'COUNTER_TC_MACRO' (11#1) [C:/Xilinxa/Vivado/2019.2/data/verilog/src/unimacro/COUNTER_TC_MACRO.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Counter' (12#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/Counter.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'TDC' (13#1) [C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/rtl/TDC.v:29]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[163]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[162]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[161]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[160]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[159]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[158]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[157]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[156]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[155]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[154]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[153]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[152]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[151]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[150]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[149]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[148]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[147]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[146]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[145]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[144]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[143]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[142]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[141]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[140]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[139]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[138]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[137]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[136]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[135]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[134]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[133]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[132]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[131]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[130]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[129]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[128]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[127]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[126]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[125]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[124]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[123]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[122]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[121]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[120]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[119]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[118]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[117]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[116]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[115]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[114]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[113]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[112]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[111]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[110]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[109]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[108]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[107]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[106]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[105]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[104]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[103]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[102]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[101]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[100]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[99]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[98]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[97]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[96]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[95]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[94]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[93]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[92]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[91]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[90]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[89]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[88]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[87]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[86]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[85]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[84]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[83]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[82]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[81]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[80]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[79]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[78]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[77]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[76]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[75]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[74]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[73]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[72]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[71]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[70]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[69]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[68]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[67]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[66]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[65]
+WARNING: [Synth 8-3331] design StopPipeline has unconnected port pipe_in[64]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 581.590 ; gain = 284.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 581.590 ; gain = 284.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 581.590 ; gain = 284.055
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 581.590 ; gain = 284.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module COUNTER_TC_MACRO 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 734.262 ; gain = 436.727
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 734.262 ; gain = 436.727
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 734.262 ; gain = 436.727
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   131|
+|3     |DSP48E1 |     1|
+|4     |LUT2    |    50|
+|5     |LUT5    |   344|
+|6     |FDCE    |   352|
+|7     |IBUF    |     2|
+|8     |OBUF    |   392|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------------------------------------------+-----------------------------+------+
+|      |Instance                                          |Module                       |Cells |
++------+--------------------------------------------------+-----------------------------+------+
+|1     |top                                               |                             |  1273|
+|2     |  \Start_carry4_DelayLine.Start_carry4_DelayLine  |Multi_Carry4_Start_DelayLine |    46|
+|3     |  \Start_pipeline.Start_pipeline                  |StartPipeline                |   179|
+|4     |  \Start_thermo2onehot.Start_thermo2onehot        |StartThermo2OneHot           |   170|
+|5     |  \Stop_carry4_DelayLine.Stop_carry4_DelayLine    |Multi_Carry4_Stop_DelayLine  |    85|
+|6     |  \Stop_pipeline.Stop_pipeline                    |StopPipeline                 |   178|
+|7     |  \Stop_thermo2onehot.Stop_thermo2onehot          |StopThermo2OneHot            |   170|
+|8     |  \counter.counter                                |Counter                      |    50|
+|9     |    COUNTER_TC_MACRO_inst                         |COUNTER_TC_MACRO             |    49|
++------+--------------------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 174 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 735.199 ; gain = 437.664
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.201 . Memory (MB): peak = 747.273 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 842.813 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:01:22 . Memory (MB): peak = 842.813 ; gain = 545.277
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 842.813 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Giacomo/Desktop/LAE_TDC_project/TDC/work/impl/TDC.runs/synth_1/TDC.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 842.813 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file TDC_utilization_synth.rpt -pb TDC_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 26 10:47:02 2020...
